@@ -1,4 +1,5 @@
 import { Button, Flex, Heading, Image, Stack, Text, useBreakpointValue } from '@chakra-ui/react';
+import Link from 'next/link';
 
 export default function SplitScreen() {
   return (
@@ -32,17 +33,21 @@ export default function SplitScreen() {
             الاتجاه الصحيح بعد تمام الصفقة
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-            <Button
-              rounded={'full'}
-              bg={'green.400'}
-              color={'white'}
-              _hover={{
-                bg: 'green.500',
-              }}
-            >
-              أنشئ ضمان
-            </Button>
-            <Button rounded={'full'}>كيف نعمل</Button>
+            <Link passHref href={'/adddaman'}>
+              <Button
+                rounded={'full'}
+                bg={'green.400'}
+                color={'white'}
+                _hover={{
+                  bg: 'green.500',
+                }}
+              >
+                أنشئ ضمان
+              </Button>
+            </Link>
+            <Link passHref href={'/howwework'}>
+              <Button rounded={'full'}>كيف نعمل</Button>
+            </Link>
           </Stack>
         </Stack>
       </Flex>
