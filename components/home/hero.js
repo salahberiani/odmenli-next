@@ -1,5 +1,17 @@
-import { Button, Flex, Heading, Image, Stack, Text, useBreakpointValue } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
+  useBreakpointValue,
+  Box,
+} from '@chakra-ui/react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+const MotionBox = motion(Box);
 
 export default function SplitScreen() {
   return (
@@ -51,14 +63,120 @@ export default function SplitScreen() {
           </Stack>
         </Stack>
       </Flex>
-      <Flex flex={1}>
-        <Image
+      <Flex p="4" flex={1}>
+        {/* <Image
           alt={'Login Image'}
           objectFit={'cover'}
           src={
             'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
           }
-        />
+        /> */}
+        <Box>
+          <MotionBox
+            shadow="xl"
+            rounded="xl"
+            initial="hidden"
+            animate="visible"
+            color="white"
+            p="4"
+            ml="100px"
+            variants={{
+              hidden: {
+                scale: 0.8,
+                opacity: 0,
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.4,
+                },
+              },
+            }}
+            bg="blue.500"
+          >
+            لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت النتيجة
+            أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
+          </MotionBox>
+          <MotionBox
+            shadow="xl"
+            rounded="xl"
+            initial="hidden"
+            animate="visible"
+            p="4"
+            mr="100px"
+            mt="-10px"
+            variants={{
+              hidden: {
+                scale: 0.8,
+                opacity: 0,
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.8,
+                },
+              },
+            }}
+            bg="gray.200"
+          >
+            لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت النتيجة
+            أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
+          </MotionBox>
+          <MotionBox
+            shadow="xl"
+            rounded="xl"
+            initial="hidden"
+            animate="visible"
+            color="white"
+            p="4"
+            ml="50px"
+            variants={{
+              hidden: {
+                scale: 0.8,
+                opacity: 0,
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 1.2,
+                },
+              },
+            }}
+            bg="blue.500"
+          >
+            لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت النتيجة
+            أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
+          </MotionBox>
+          <MotionBox
+            shadow="xl"
+            rounded="xl"
+            initial="hidden"
+            animate="visible"
+            p="4"
+            mr="50px"
+            mt="-10px"
+            variants={{
+              hidden: {
+                scale: 0.8,
+                opacity: 0,
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 1.6,
+                },
+              },
+            }}
+            bg="gray.200"
+          >
+            لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت النتيجة
+            أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
+          </MotionBox>
+        </Box>
       </Flex>
     </Stack>
   );
