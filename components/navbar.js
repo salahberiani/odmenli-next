@@ -29,20 +29,83 @@ import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from '@ch
 import Link from 'next/link';
 import { RiShieldCheckFill } from 'react-icons/ri';
 
+import useStore from 'store';
+
+function LoggedinMenu() {
+  const logout = useStore((state) => state.logout);
+
+  return (
+    <>
+      <Link passHref href="/dashboard">
+        <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
+          المنصة
+        </Button>
+      </Link>
+      <Menu>
+        <MenuButton as={Button} variant={'link'} rightIcon={<ChevronDownIcon />}>
+          الحساب
+        </MenuButton>
+        <MenuList>
+          <Link passHref href="/profile">
+            <MenuItem>معلومات الحساب</MenuItem>
+          </Link>
+          <MenuItem onClick={logout}>تسجيل الخروج</MenuItem>
+        </MenuList>
+      </Menu>
+    </>
+  );
+}
+
+function NotLoggedinMenu() {
+  return (
+    <>
+      <Link passHref href="/about">
+        <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
+          عنا
+        </Button>
+      </Link>
+      <Link passHref href="/login">
+        <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
+          تسجيل الدخول
+        </Button>
+      </Link>
+      <Link passHref href="/register">
+        <Button
+          display={{ base: 'none', md: 'inline-flex' }}
+          fontSize={'sm'}
+          fontWeight={600}
+          color={'white'}
+          bg={'green.400'}
+          _hover={{
+            bg: 'green.300',
+          }}
+        >
+          التسجيل
+        </Button>
+      </Link>
+    </>
+  );
+}
+
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const isLoggedIn = useStore((state) => state.isLoggedIn);
 
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('white', 'gray.800')}
-        color={useColorModeValue('gray.600', 'white')}
+        position="fixed"
+        w="100%"
+        className="glass"
+        shadow="sm"
+        // bg={useColorModeValue('white', 'gray.800')}
+        // color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
+        // borderBottom={1}
+        // borderStyle={'solid'}
+        // borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}
       >
         <Flex
@@ -81,46 +144,8 @@ export default function WithSubnavigation() {
         </Flex>
 
         <Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} direction={'row'} spacing={6}>
-          {/* <Link passHref href="/dashboard">
-            <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
-              المنصة
-            </Button>
-          </Link>
-          <Link passHref href="/about">
-            <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
-              عنا
-            </Button>
-          </Link>
-          <Menu>
-            <MenuButton as={Button} variant={'link'} rightIcon={<ChevronDownIcon />}>
-              الحساب
-            </MenuButton>
-            <MenuList>
-              <Link passHref href="/profile">
-                <MenuItem>معلومات الحساب</MenuItem>
-              </Link>
-              <MenuItem>تسجيل الخروج</MenuItem>
-            </MenuList>
-          </Menu> */}
-          <Link passHref href="/login">
-            <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
-              تسجيل الدخول
-            </Button>
-          </Link>
-          <Link passHref href="/register">
-            <Button
-              display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
-              fontWeight={600}
-              color={'white'}
-              bg={'green.400'}
-              _hover={{
-                bg: 'green.300',
-              }}
-            >
-              التسجيل
-            </Button>
-          </Link>
+          {isLoggedIn && <LoggedinMenu></LoggedinMenu>}
+          {!isLoggedIn && <NotLoggedinMenu></NotLoggedinMenu>}
         </Stack>
       </Flex>
 
