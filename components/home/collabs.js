@@ -3,8 +3,10 @@ export default function collabs() {
   return (
     <Box>
       <Stack spacing={0} align={'center'}>
-        <Heading my="2">بعض الشركات التي تعمل معنا</Heading>
-        <Text mb="16" fontSize="lg">
+        <Heading textAlign="center" my="2">
+          بعض الشركات التي تعمل معنا
+        </Heading>
+        <Text textAlign="center" mb="16" fontSize="lg">
           شركات وضعت ثقتها في أضمنلي للتوسط في الصفقات المالية
         </Text>
       </Stack>

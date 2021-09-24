@@ -86,7 +86,7 @@ export default function WithSpeechBubbles() {
       <Container maxW={'7xl'} py={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={'center'}>
           <Heading my="2">زبائننا قالو عنا</Heading>
-          <Text mb="16" fontSize="lg">
+          <Text textAlign="center" mb="16" fontSize="lg">
             تعاملنا مع الكثير من الزبائن وصفقاتهم كانت مختلفة وهذه كلمات بعضهم عنا
           </Text>
         </Stack>

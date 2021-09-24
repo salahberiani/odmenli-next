@@ -2,7 +2,7 @@ import { Box, Heading, Container, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 export default function howwework() {
   return (
-    <Container maxW={'6xl'} py={16}>
+    <Container maxW={'4xl'} py={16}>
       <Heading my="8" color="gray.600">
         كيف نعمل في أضمنلي
       </Heading>

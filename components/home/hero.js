@@ -7,6 +7,8 @@ import {
   Text,
   useBreakpointValue,
   Box,
+  Avatar,
+  Icon,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -19,7 +21,7 @@ export default function SplitScreen() {
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={6} w={'full'} maxW={'lg'}>
           <Heading fontWeight="extrabold" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-            <Text
+            {/* <Text
               as={'span'}
               position={'relative'}
               _after={{
@@ -34,7 +36,7 @@ export default function SplitScreen() {
               }}
             >
               ضمان
-            </Text>
+            </Text> */}
             <br />{' '}
             <Text color={'green.400'} as={'span'}>
               ضمان كل أنواع صفقات البيع والشراء
@@ -63,7 +65,7 @@ export default function SplitScreen() {
           </Stack>
         </Stack>
       </Flex>
-      <Flex p="4" flex={1}>
+      <Flex py="16" flex={1}>
         {/* <Image
           alt={'Login Image'}
           objectFit={'cover'}
@@ -71,15 +73,14 @@ export default function SplitScreen() {
             'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
           }
         /> */}
-        <Box>
+        <Box px={{ base: '4', md: '16' }}>
           <MotionBox
             shadow="xl"
             rounded="xl"
             initial="hidden"
             animate="visible"
-            color="white"
             p="4"
-            ml="100px"
+            ml={{ base: '20px', md: '100px' }}
             variants={{
               hidden: {
                 scale: 0.8,
@@ -93,10 +94,18 @@ export default function SplitScreen() {
                 },
               },
             }}
-            bg="blue.500"
+            bg="gray.200"
           >
-            لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت النتيجة
-            أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
+            <Flex
+              direction={{ base: 'column', md: 'row' }}
+              justify={{ base: 'center', md: 'flex-start' }}
+            >
+              <Avatar mx="3"></Avatar>
+              <Text>
+                لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت
+                النتيجة أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
+              </Text>
+            </Flex>
           </MotionBox>
           <MotionBox
             shadow="xl"
@@ -104,7 +113,7 @@ export default function SplitScreen() {
             initial="hidden"
             animate="visible"
             p="4"
-            mr="100px"
+            mr={{ base: '20px', md: '100px' }}
             mt="-10px"
             variants={{
               hidden: {
@@ -119,63 +128,88 @@ export default function SplitScreen() {
                 },
               },
             }}
-            bg="gray.200"
+            bg="gray.300"
           >
-            لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت النتيجة
-            أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
+            <Flex
+              direction={{ base: 'column', md: 'row' }}
+              justify={{ base: 'center', md: 'flex-start' }}
+            >
+              <Avatar mx="3"></Avatar>
+              <Text>
+                لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت
+                النتيجة أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
+              </Text>
+            </Flex>
           </MotionBox>
-          <MotionBox
-            shadow="xl"
-            rounded="xl"
-            initial="hidden"
-            animate="visible"
-            color="white"
-            p="4"
-            ml="50px"
-            variants={{
-              hidden: {
-                scale: 0.8,
-                opacity: 0,
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 1.2,
+          <Box mt="8" mr={{ base: '4', md: '16' }}>
+            <MotionBox
+              shadow="xl"
+              rounded="xl"
+              initial="hidden"
+              animate="visible"
+              p="4"
+              ml={{ base: '10px', md: '50px' }}
+              variants={{
+                hidden: {
+                  scale: 0.8,
+                  opacity: 0,
                 },
-              },
-            }}
-            bg="blue.500"
-          >
-            لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت النتيجة
-            أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
-          </MotionBox>
-          <MotionBox
-            shadow="xl"
-            rounded="xl"
-            initial="hidden"
-            animate="visible"
-            p="4"
-            mr="50px"
-            mt="-10px"
-            variants={{
-              hidden: {
-                scale: 0.8,
-                opacity: 0,
-              },
-              visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                  delay: 1.6,
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 1.2,
+                  },
                 },
-              },
-            }}
-            bg="gray.200"
-          >
-            لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت النتيجة
-            أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
-          </MotionBox>
+              }}
+              bg="gray.200"
+            >
+              <Flex
+                direction={{ base: 'column', md: 'row' }}
+                justify={{ base: 'center', md: 'flex-start' }}
+              >
+                <Avatar mx="3"></Avatar>
+                <Text>
+                  لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت
+                  النتيجة أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
+                </Text>
+              </Flex>
+            </MotionBox>
+            <MotionBox
+              shadow="xl"
+              rounded="xl"
+              initial="hidden"
+              animate="visible"
+              p="4"
+              mr={{ base: '10px', md: '50px' }}
+              mt="-10px"
+              variants={{
+                hidden: {
+                  scale: 0.8,
+                  opacity: 0,
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 1.6,
+                  },
+                },
+              }}
+              bg="gray.300"
+            >
+              <Flex
+                direction={{ base: 'column', md: 'row' }}
+                justify={{ base: 'center', md: 'flex-start' }}
+              >
+                <Avatar mx="3"></Avatar>
+                <Text>
+                  لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت
+                  النتيجة أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
+                </Text>
+              </Flex>
+            </MotionBox>
+          </Box>
         </Box>
       </Flex>
     </Stack>
