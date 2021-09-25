@@ -21,6 +21,9 @@ export default function Example() {
 
   return (
     <>
+      <Heading size="lg" my="4">
+        الحساب الجاري لاستقبال الأموال
+      </Heading>
       <Flex mb={2}>
         <Alert status="warning">
           <UnorderedList>

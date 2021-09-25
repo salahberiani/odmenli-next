@@ -1,8 +1,11 @@
+/* eslint-disable react/display-name */
 import { useTable } from 'react-table';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, Badge, Box, Button, Flex } from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
+import Axios from 'util/Axios';
+import useStore from 'store';
 
 import makeData from './makeData';
 
@@ -31,7 +34,7 @@ function DashTable({ columns, data }) {
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <Tr key={i} {...row.getRowProps()}>
+            <Tr _hover={{ bg: 'green.50' }} key={i} {...row.getRowProps()}>
               {row.cells.map((cell, i) => {
                 return (
                   <Td key={i} {...cell.getCellProps()}>
@@ -48,41 +51,83 @@ function DashTable({ columns, data }) {
 }
 
 function App() {
+  const statusToArabic = {
+    pending: {
+      name: 'قيد التأكيد',
+      color: 'yellow',
+    },
+    verfied: {
+      name: 'تم التأكيد',
+      color: 'blue',
+    },
+    failed: {
+      name: 'فشل التأكيد',
+      color: 'red',
+    },
+    rejected: {
+      name: 'فشل الصفقة',
+      color: 'red',
+    },
+    complete: {
+      name: 'نجاح الصفقة',
+      color: 'green',
+    },
+  };
+  const userid = useStore((state) => state.auth._id);
+
+  const [daman, setDaman] = useState();
+  useEffect(() => {
+    const getDaman = async () => {
+      try {
+        const res = await Axios.post('/daman/userlist', { userid });
+        setDaman(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getDaman();
+  }, [userid]);
   const columns = React.useMemo(
     () => [
       {
         Header: 'رقم التعريف',
-        // eslint-disable-next-line react/display-name
-        Cell: () => <Badge fontSize="0.8em">sd4f5sd45s5d4f5s</Badge>,
+        accessor: '_id',
+
+        Cell: ({ cell }) => {
+          return (
+            <Link passHref href={`/daman/${cell.value}`}>
+              <Badge _hover={{ color: 'green.500' }} cursor="pointer" fontSize="0.8em">
+                {cell.value}
+              </Badge>
+            </Link>
+          );
+        },
       },
       {
         Header: 'اسم الشاري',
-        accessor: 'firstName',
+        accessor: 'bayerFullName',
       },
       {
         Header: 'اسم البائع',
-        accessor: 'lastName',
+        accessor: 'sellerFullName',
       },
 
       {
         Header: 'رقم البائع',
-        accessor: 'age',
+        accessor: 'sellerPhone',
       },
       {
-        Header: 'رقم ccp البائع',
-        accessor: 'visits',
+        Header: 'نوع',
+        accessor: 'type',
       },
-      {
-        Header: 'مفتاح ccp البائع',
-        accessor: 'status',
-      },
+
       {
         Header: 'الحالة',
-        accessor: 'progress',
+        accessor: 'status',
         // eslint-disable-next-line react/display-name
-        Cell: () => (
-          <Badge fontSize="0.8em" colorScheme="green">
-            اكتمل
+        Cell: ({ cell }) => (
+          <Badge fontSize="0.8em" colorScheme={statusToArabic[cell.value].color}>
+            {statusToArabic[cell.value].name}
           </Badge>
         ),
       },
@@ -91,6 +136,8 @@ function App() {
   );
 
   const data = React.useMemo(() => makeData(5), []);
+  console.log(data);
+  console.log(daman);
 
   return (
     <Box>
@@ -102,7 +149,7 @@ function App() {
         </Link>
       </Flex>
       <Box w="100%" overflowX={{ base: 'scroll', md: 'hidden' }} overflowY="hidden">
-        <DashTable columns={columns} data={data} />
+        {daman && <DashTable columns={columns} data={daman} />}
       </Box>
     </Box>
   );

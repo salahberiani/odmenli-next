@@ -6,7 +6,7 @@ import CcpInfo from 'components/dashboard/ccpInfo';
 
 export default function TableExample(props) {
   return (
-    <Box px="10%" py="5%" maxW="100vw">
+    <Box px="10%" pb="5%" maxW="100vw">
       <CcpInfo></CcpInfo>
       {/* <Init></Init> */}
       <Table></Table>
