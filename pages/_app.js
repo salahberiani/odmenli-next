@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import jwt_decode from 'jwt-decode';
 
 import useStore from 'store';
+import * as ga from '../lib/ga';
 
 const FbChat = dynamic(() => import('components/fbChat'), { ssr: false });
 
@@ -79,6 +80,21 @@ function MyApp({ Component, pageProps }) {
       router.events.off('routeChangeComplete', authCheck);
     };
   }, [authCheck, router.events, router.asPath]);
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url);
+    };
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <ChakraProvider>
