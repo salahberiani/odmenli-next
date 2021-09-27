@@ -22,7 +22,6 @@ import useStore from 'store';
 export default function SimpleCard() {
   const router = useRouter();
   const isLoggedIn = useStore((state) => state.isLoggedIn);
-  const login = useStore((state) => state.login);
 
   const toast = useToast();
 
@@ -126,7 +125,7 @@ export default function SimpleCard() {
                   <Link passHref href={'/login'}>
                     تسجيل الدخول للحساب
                   </Link>
-                  <Link color={'green.400'}>نسيت كلمة السر؟</Link>
+                  {/* <Link color={'green.400'}>نسيت كلمة السر؟</Link> */}
                 </Stack>
                 <Button
                   type="submit"

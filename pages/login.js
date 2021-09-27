@@ -105,7 +105,7 @@ export default function SimpleCard() {
                   <Link passHref href="/register">
                     تسجيل حساب جديد
                   </Link>
-                  <Link color={'green.400'}>نسيت كلمة السر؟</Link>
+                  {/* <Link color={'green.400'}>نسيت كلمة السر؟</Link> */}
                 </Stack>
                 <Button
                   type="submit"
