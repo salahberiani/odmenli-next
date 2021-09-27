@@ -56,7 +56,7 @@ export default function Index() {
   return (
     <Box
       as="section"
-      bg={useColorModeValue('gray.100', 'inherit')}
+      //   bg={useColorModeValue('gray.100', 'inherit')}
       py="12"
       px={{
         md: '8',

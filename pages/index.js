@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useStore from 'store';
-import Hero from 'components/home/hero';
-import Testmonials from 'components/home/testemonials';
-import Services from 'components/home/services';
-import Features from 'components/home/features';
-import Collabs from 'components/home/collabs';
+import dynamic from 'next/dynamic';
+const Hero = dynamic(() => import('components/home/hero'));
+const Testmonials = dynamic(() => import('components/home/testemonials'));
+const Services = dynamic(() => import('components/home/services'));
+const Features = dynamic(() => import('components/home/features'));
+const Collabs = dynamic(() => import('components/home/collabs'));
 
 export default function SplitScreen() {
   const router = useRouter();

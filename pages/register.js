@@ -5,7 +5,6 @@ import {
   FormLabel,
   Input,
   Stack,
-  Link,
   Button,
   Heading,
   Text,
@@ -13,6 +12,7 @@ import {
   useToast,
   FormErrorMessage,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
@@ -123,7 +123,9 @@ export default function SimpleCard() {
                   align={'start'}
                   justify={'space-between'}
                 >
-                  <Link color={'green.400'}>تسجيل الدخول للحساب</Link>
+                  <Link passHref href={'/login'}>
+                    تسجيل الدخول للحساب
+                  </Link>
                   <Link color={'green.400'}>نسيت كلمة السر؟</Link>
                 </Stack>
                 <Button
