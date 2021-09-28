@@ -73,12 +73,20 @@ export default function SimpleCard() {
             للحفاظ على أموالك مع أضمنلي ✌️
           </Text>
         </Stack>
-        <Box rounded={'lg'} bg={useColorModeValue('white', 'gray.700')} boxShadow={'lg'} p={8}>
+        <Box
+          minW="xs"
+          maxW="xs"
+          rounded={'lg'}
+          bg={useColorModeValue('white', 'gray.700')}
+          boxShadow={'lg'}
+          p={8}
+        >
           <form onSubmit={handleSubmit(onSubmit)}>
             <Stack spacing={4}>
               <FormControl id="email" isInvalid={errors.email}>
                 <FormLabel>البريد الالكتروني</FormLabel>
                 <Input
+                  placeholder="البريد الالكتروني"
                   {...register('email', {
                     required: 'هذا مطلوب',
                   })}
@@ -89,6 +97,7 @@ export default function SimpleCard() {
                 <FormLabel>كلمة السر</FormLabel>
                 <Input
                   type="password"
+                  placeholder="كلمة السر"
                   {...register('password', {
                     required: 'هذا مطلوب',
                   })}

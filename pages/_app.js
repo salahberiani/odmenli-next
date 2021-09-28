@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import jwt_decode from 'jwt-decode';
 
+import theme from 'theme';
 import useStore from 'store';
 import * as ga from '../lib/ga';
 
@@ -54,7 +55,7 @@ function MyApp({ Component, pageProps }) {
 
   const authCheck = useCallback(
     (url) => {
-      const publicPaths = ['/login', '/register', '/howwework', '/about', '/'];
+      const publicPaths = ['/login', '/register', '/howwework', '/about', '/', '/price'];
       const path = url.split('?')[0];
       if (!isLoggedIn && !publicPaths.includes(path)) {
         setAuthorized(false);
@@ -97,7 +98,7 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <RtlProvider>
         <Box bg="gray.50">
           <motion.div
@@ -116,8 +117,8 @@ function MyApp({ Component, pageProps }) {
             {authorized ? (
               <>
                 <Navbar></Navbar>
-                <Box pt="100px">
-                  <Component onent {...pageProps} />
+                <Box pt="100px" minH="100vh">
+                  <Component {...pageProps} />
                 </Box>
                 <Footer></Footer>
               </>

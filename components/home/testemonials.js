@@ -56,7 +56,7 @@ const TestimonialText = ({ children }) => {
   return (
     <Text
       w="320px"
-      h="90px"
+      h="130px"
       textAlign={'center'}
       color={useColorModeValue('gray.600', 'gray.400')}
       fontSize={'md'}
@@ -93,6 +93,17 @@ export default function WithSpeechBubbles() {
         <Stack direction={{ base: 'column', md: 'row' }} spacing={{ base: 10, md: 4, lg: 10 }}>
           <Testimonial>
             <TestimonialContent>
+              <TestimonialHeading>الحماية من المحتالين</TestimonialHeading>
+              <TestimonialText>
+                لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت
+                النتيجة أنني خسرت المبلغ دون أي أمل لاسترداده لكن بعد ان تعاملت عن طريق موقع اظمنلي
+                اصبح من المستحيل ان اقع في فخ الاحتيال نتمنى لهم التوفيق والمزيد من النجاحات
+              </TestimonialText>
+            </TestimonialContent>
+            <TestimonialAvatar name={'رضا ********'} />
+          </Testimonial>
+          <Testimonial>
+            <TestimonialContent>
               <TestimonialHeading>سهولة استخدام المنصة</TestimonialHeading>
               <TestimonialText>
                 ضننت المنصة ستعقد علي الامر لكن كان الامر سهل جدا وأتممت الصفقة بنجاح ولن أفكر مرتين
@@ -106,20 +117,11 @@ export default function WithSpeechBubbles() {
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>الحماية من المحتالين</TestimonialHeading>
-              <TestimonialText>
-                لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت
-                النتيجة أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
-              </TestimonialText>
-            </TestimonialContent>
-            <TestimonialAvatar name={'رضا ********'} />
-          </Testimonial>
-          <Testimonial>
-            <TestimonialContent>
               <TestimonialHeading>مساندة ممتازة </TestimonialHeading>
               <TestimonialText>
                 كان لدي غرض أريد شرائه من ولاية أخرى ولكن كنت متردد حول ارسال الاموال مباشرة للبائع
-                حتى نصحني احدهم باستخدام أضمنلي وكل ما فعلته انني أرسلت الأموال لهم وهم تكفلو بكل شئ
+                حتى نصحني احدهم باستخدام أضمنلي وكل ما فعلته انني قمت بالتجربة والتعامل عن طريق موقع
+                اظمنلي وقد قامو باللازم حيث انه ليس هناك اي ثغرة لديهم للوقوع في الاحتيال
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar name={'عبد الرحمان ********'} />

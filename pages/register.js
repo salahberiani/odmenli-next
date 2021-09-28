@@ -73,12 +73,19 @@ export default function SimpleCard() {
             للحفاظ على أموالك مع أضمنلي ✌️
           </Text>
         </Stack>
-        <Box rounded={'lg'} bg={useColorModeValue('white', 'gray.700')} boxShadow={'lg'} p={8}>
+        <Box
+          minW="xs"
+          rounded={'lg'}
+          bg={useColorModeValue('white', 'gray.700')}
+          boxShadow={'lg'}
+          p={8}
+        >
           <form onSubmit={handleSubmit(onSubmit)}>
             <Stack spacing={4}>
               <FormControl id="username" isInvalid={errors.username}>
                 <FormLabel>اسم المستخدم</FormLabel>
                 <Input
+                  placeholder="اسم المستخدم"
                   {...register('username', {
                     required: 'هذا مطلوب',
                   })}
@@ -88,6 +95,7 @@ export default function SimpleCard() {
               <FormControl id="email" isInvalid={errors.email}>
                 <FormLabel>البريد الالكتروني</FormLabel>
                 <Input
+                  placeholder="البريد الالكتروني"
                   {...register('email', {
                     required: 'هذا مطلوب',
                   })}
@@ -97,6 +105,7 @@ export default function SimpleCard() {
               <FormControl id="password" isInvalid={errors.password}>
                 <FormLabel>كلمة السر</FormLabel>
                 <Input
+                  placeholder="كلمة السر"
                   type="password"
                   {...register('password', {
                     required: 'هذا مطلوب',
@@ -107,6 +116,7 @@ export default function SimpleCard() {
               <FormControl id="password" isInvalid={errors.passwordConfirm}>
                 <FormLabel>تأكيد كلمة السر</FormLabel>
                 <Input
+                  placeholder="تأكيد كلمة السر"
                   type="password"
                   {...register('passwordConfirm', {
                     required: 'هذا مطلوب',

@@ -20,31 +20,16 @@ export default function SplitScreen() {
     <Stack minH={'50%'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={6} w={'full'} maxW={'lg'}>
-          <Heading fontWeight="extrabold" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-            {/* <Text
-              as={'span'}
-              position={'relative'}
-              _after={{
-                content: "''",
-                width: 'full',
-                height: useBreakpointValue({ base: '10%', md: '15%' }),
-                position: 'absolute',
-                bottom: 3,
-                left: 0,
-                bg: 'green.400',
-                zIndex: -1,
-              }}
-            >
-              ضمان
-            </Text> */}
+          <Heading fontWeight="extrabold" fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}>
             <br />{' '}
             <Text color={'green.400'} as={'span'}>
-              ضمان كل أنواع صفقات البيع والشراء
+              ضمان كل أنواع الصفقات المالية التي تحدث بين طرفين أو اكثر
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            في أضمنلي نعمل كوسيط مالي لضمان توفية كل شروط البائع والمشتري ثم تحويل الأموال الى
-            الاتجاه الصحيح بعد تمام الصفقة
+            نظرا للاحتيالات التجارية التي تحدث عبر مواقع الشبكة العنكبوتية بشكل متكرر وكبير وللقظاء
+            عليها والحد منها قمنا بانشاء موقع اظمنلي الذي يظمن حدوث المبادلات التجارية دون الوقوع في
+            فخ الاحتيال الالكتروني الذي يقوم به اشخاص بحسابات مزيفة
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
             <Link passHref href={'/adddaman'}>

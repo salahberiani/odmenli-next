@@ -59,6 +59,21 @@ function LoggedinMenu() {
 function NotLoggedinMenu() {
   return (
     <>
+      <Link passHref href="/">
+        <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
+          الرئيسية
+        </Button>
+      </Link>
+      <Link passHref href="/price">
+        <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
+          أسعار التعامل
+        </Button>
+      </Link>
+      <Link passHref href="/howwework">
+        <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
+          كيف نعمل
+        </Button>
+      </Link>
       <Link passHref href="/about">
         <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
           عنا
@@ -108,18 +123,6 @@ export default function WithSubnavigation() {
         // borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}
       >
-        <Flex
-          flex={{ base: 1, md: 'auto' }}
-          ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}
-        >
-          <IconButton
-            onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
-          />
-        </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Link passHref href="/">
             <Flex>
@@ -137,13 +140,27 @@ export default function WithSubnavigation() {
               </Heading>
             </Flex>
           </Link>
-
-          {/* <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
-          </Flex> */}
+        </Flex>
+        <Flex
+          flex={{ base: 0, md: 'auto' }}
+          ml={{ base: -2 }}
+          display={{ base: 'flex', md: 'none' }}
+        >
+          <IconButton
+            onClick={onToggle}
+            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+            variant={'ghost'}
+            aria-label={'Toggle Navigation'}
+          />
         </Flex>
 
-        <Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} direction={'row'} spacing={6}>
+        <Stack
+          display={{ base: 'none', md: 'flex' }}
+          flex={{ base: 1, md: 0 }}
+          justify={'flex-end'}
+          direction={'row'}
+          spacing={6}
+        >
           {isLoggedIn && <LoggedinMenu></LoggedinMenu>}
           {!isLoggedIn && <NotLoggedinMenu></NotLoggedinMenu>}
         </Stack>
@@ -158,7 +175,17 @@ export default function WithSubnavigation() {
 
 const MobileNav = () => {
   return (
-    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
+    <Stack
+      shadow="sm"
+      position="fixed"
+      w="100%"
+      top="60px"
+      zIndex="999"
+      bg={useColorModeValue('green.400', 'gray.800')}
+      p={4}
+      color="white"
+      display={{ md: 'none' }}
+    >
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -167,10 +194,8 @@ const MobileNav = () => {
 };
 
 const MobileNavItem = ({ label, children, href }) => {
-  const { isOpen, onToggle } = useDisclosure();
-
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
+    <Stack spacing={4}>
       <Flex
         py={2}
         justify={'space-between'}
@@ -179,78 +204,37 @@ const MobileNavItem = ({ label, children, href }) => {
           textDecoration: 'none',
         }}
       >
-        <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+        <Link passHref href={href}>
           {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={'all .25s ease-in-out'}
-            transform={isOpen ? 'rotate(180deg)' : ''}
-            w={6}
-            h={6}
-          />
-        )}
+        </Link>
       </Flex>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
-          align={'start'}
-        >
-          {children &&
-            children.map((child) => (
-              <Link key={child.label} py={2} href="/">
-                {child.label}
-              </Link>
-            ))}
-        </Stack>
-      </Collapse>
     </Stack>
   );
 };
 
 const NAV_ITEMS = [
   {
-    label: 'Inspiration',
-    children: [
-      {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
-      },
-      {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
-      },
-    ],
+    label: 'الرئيسية',
+    href: '/',
   },
   {
-    label: 'Find Work',
-    children: [
-      {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
-      },
-      {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
-        href: '#',
-      },
-    ],
+    label: 'أسعار التعامل',
+    href: '/price',
   },
   {
-    label: 'Learn Design',
-    href: '#',
+    label: 'كيف نعمل',
+    href: '/howwework',
   },
   {
-    label: 'Hire Designers',
-    href: '#',
+    label: 'عنا',
+    href: '/about',
+  },
+  {
+    label: 'تسجيل الدخول',
+    href: '/login',
+  },
+  {
+    label: 'تسجيل جديد',
+    href: '/register',
   },
 ];

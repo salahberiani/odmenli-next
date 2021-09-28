@@ -7,6 +7,7 @@ const Testmonials = dynamic(() => import('components/home/testemonials'));
 const Services = dynamic(() => import('components/home/services'));
 const Features = dynamic(() => import('components/home/features'));
 const Collabs = dynamic(() => import('components/home/collabs'));
+const Questions = dynamic(() => import('components/home/questions'));
 
 export default function SplitScreen() {
   const router = useRouter();
@@ -24,6 +25,7 @@ export default function SplitScreen() {
       <Features></Features>
       <Collabs></Collabs>
       <Testmonials></Testmonials>
+      <Questions></Questions>
     </>
   );
 }
