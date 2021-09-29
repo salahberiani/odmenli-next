@@ -17,6 +17,7 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import useStore from 'store';
 
 export default function SimpleCard() {
@@ -66,6 +67,9 @@ export default function SimpleCard() {
       justify={'center'}
       bg={useColorModeValue('gray.50', 'gray.800')}
     >
+      <Head>
+        <title>تسجيل الدخول</title>
+      </Head>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
           <Heading fontSize={'4xl'}>سجل الدخول لحسابك</Heading>

@@ -1,5 +1,6 @@
 import { Box, Button, useColorModeValue, Heading } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 
 import { HiPencilAlt } from 'react-icons/hi';
 import Axios from 'util/Axios';
@@ -8,7 +9,7 @@ import Card from './Card';
 import CardContent from './CardContent';
 import CardHeader from './CardHeader';
 import Property from './Property';
-import Edite from './Edite';
+const Edite = dynamic(() => import('./Edite'));
 import useStore from 'store';
 
 export default function Index() {

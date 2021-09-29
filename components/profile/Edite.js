@@ -11,8 +11,6 @@ import {
 } from '@chakra-ui/react';
 import Axios from 'util/Axios';
 import { useForm } from 'react-hook-form';
-import { useRouter } from 'next/router';
-import useStore from 'store';
 
 export default function Adddaman({ profile, setEdit }) {
   const toast = useToast();

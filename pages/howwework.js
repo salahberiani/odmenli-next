@@ -1,8 +1,12 @@
 import { Box, Heading, Container, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
+import Head from 'next/head';
 export default function howwework() {
   return (
     <Container maxW={'4xl'} py={16}>
+      <Head>
+        <title>كيف نعمل</title>
+      </Head>
       <Heading my="8" color="gray.600">
         كيف نعمل في أضمنلي
       </Heading>

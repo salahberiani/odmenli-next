@@ -13,6 +13,7 @@ import {
   Td,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import Head from 'next/head';
 
 import React from 'react';
 
@@ -41,6 +42,9 @@ export default function Price() {
   };
   return (
     <Container maxW={'5xl'}>
+      <Head>
+        <title>أسعار التعامل</title>
+      </Head>
       <SimpleGrid columns={2} columnGap={6} rowGap={3}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
           <Input onChange={handlePrice} type="number" placeholder="المبلغ"></Input>

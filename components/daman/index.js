@@ -3,13 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { HiPencilAlt } from 'react-icons/hi';
 import Axios from 'util/Axios';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 
 import useStore from 'store';
 import Card from './Card';
 import CardContent from './CardContent';
 import CardHeader from './CardHeader';
 import Property from './Property';
-import Edite from './Edite';
+const Edite = dynamic(() => import('./Edite'));
 
 export default function Index() {
   const statusToArabic = {
