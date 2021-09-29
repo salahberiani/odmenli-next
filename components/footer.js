@@ -50,6 +50,7 @@ export default function SmallCentered() {
           <Stack align={'flex-start'}>
             <ListHeader>روابط</ListHeader>
             <Link href={'/'}>الرئيسية</Link>
+            <Link href={'/price'}>أسعار التعامل</Link>
             <Link href={'/howwework'}>كيف نعمل</Link>
             <Link href={'/about'}>عنا</Link>
             <Link href={'/login'}>تسجيل</Link>

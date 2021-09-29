@@ -1,33 +1,25 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 import {
-  Flex,
-  Box,
   FormControl,
   FormLabel,
   Input,
-  Checkbox,
-  Stack,
-  Link,
   Button,
-  Heading,
-  Text,
   Grid,
   GridItem,
   Alert,
   useToast,
   FormErrorMessage,
-  List,
   ListItem,
-  ListIcon,
-  OrderedList,
   UnorderedList,
   SimpleGrid,
   Container,
+  Text,
 } from '@chakra-ui/react';
-// import axios from 'axios';
 import Axios from 'util/Axios';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import useStore from 'store';
 
 export default function Adddaman() {
@@ -64,6 +56,14 @@ export default function Adddaman() {
     }
   }
 
+  const MyTag = React.forwardRef(({ onClick, href }, ref) => {
+    return (
+      <a style={{ fontWeight: 'bold' }} href={href} onClick={onClick} ref={ref}>
+        أسعار التعامل
+      </a>
+    );
+  });
+
   return (
     <Container maxW="8xl" p={{ base: 5 }}>
       <Grid
@@ -74,7 +74,14 @@ export default function Adddaman() {
       >
         <GridItem rowSpan={2} colSpan={{ base: 5, md: 2 }}>
           <Alert status="success">
-            <UnorderedList>
+            <UnorderedList spacing={3}>
+              <ListItem>
+                أرجو تفقد{' '}
+                <Link passHref href="/price">
+                  <MyTag></MyTag>
+                </Link>{' '}
+                والتأكد من السعر المفترض ارساله لنا
+              </ListItem>
               <ListItem>أرجو التأكد من المعلومات جيدا قبل انشاء الضمان</ListItem>
               <ListItem>
                 وثيقة ارسال الأموال المطلوبة يجب أن تكون صورة لحوالة الارسال البريدي ويجب أن تكون
