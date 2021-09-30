@@ -7,7 +7,7 @@ export default function about() {
       <Head>
         <title>عنا</title>
       </Head>
-      <h1>abouttt usssdsss</h1>
+      <h1>abouttt latest</h1>
     </div>
   );
 }
