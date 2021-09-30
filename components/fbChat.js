@@ -7,7 +7,7 @@ export default function fbChat() {
         pageId="109209821521133"
         appId="428029188262416"
         themeColor="#48bb78"
-        language="ar"
+        language="ar_AR"
       />
     </div>
   );
