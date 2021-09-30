@@ -34,7 +34,7 @@ jobs:
           script: |
             pm2 stop all
             cd odmenli/odmenli-next
-            git reset -- hard
+            git reset --hard
             git pull
             yarn
             yarn build
