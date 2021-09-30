@@ -30,4 +30,5 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_PASSWORD }}
+          passphrase: ${{ secrets.SERVER_PASSPHRASE }}
           script: pm2 stop all && cd odmenli/odmenli-next && git pull && yarn && yarn build && pm2 start all
