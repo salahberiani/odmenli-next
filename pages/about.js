@@ -7,7 +7,7 @@ export default function about() {
       <Head>
         <title>عنا</title>
       </Head>
-      <h1>about ussssssddd</h1>
+      <h1>about ussssss</h1>
     </div>
   );
 }
