@@ -12,6 +12,7 @@ import {
   useToast,
   FormErrorMessage,
 } from '@chakra-ui/react';
+import React from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
@@ -36,6 +37,7 @@ export default function SimpleCard() {
   const {
     handleSubmit,
     register,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm();
   async function onSubmit(values, e) {
@@ -51,12 +53,13 @@ export default function SimpleCard() {
         // isClosable: true,
       });
     } catch (error) {
-      toast({
-        title: 'فشل في عملية الارسال',
-        status: 'error',
-        duration: 9000,
-        // isClosable: true,
-      });
+      console.log(error.response);
+      for (const key in error.response.data.messages) {
+        setError(`${key}`, {
+          type: 'string',
+          message: error.response.data.messages[key],
+        });
+      }
     }
   }
 

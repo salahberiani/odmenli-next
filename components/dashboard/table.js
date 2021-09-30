@@ -7,8 +7,6 @@ import Link from 'next/link';
 import Axios from 'util/Axios';
 import useStore from 'store';
 
-import makeData from './makeData';
-
 function DashTable({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({
@@ -134,10 +132,6 @@ function App() {
     ],
     []
   );
-
-  const data = React.useMemo(() => makeData(5), []);
-  console.log(data);
-  console.log(daman);
 
   return (
     <Box>

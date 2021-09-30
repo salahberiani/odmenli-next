@@ -51,8 +51,9 @@ export default function SimpleCard() {
       router.push('/dashboard');
       console.log(res);
     } catch (error) {
+      console.log(error.response);
       toast({
-        title: 'فشل في عملية الارسال',
+        title: error.response.data.message,
         status: 'error',
         duration: 9000,
         // isClosable: true,
