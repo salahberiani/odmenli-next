@@ -55,7 +55,15 @@ function MyApp({ Component, pageProps }) {
 
   const authCheck = useCallback(
     (url) => {
-      const publicPaths = ['/login', '/register', '/howwework', '/about', '/', '/price'];
+      const publicPaths = [
+        '/login',
+        '/register',
+        '/howwework',
+        '/about',
+        '/',
+        '/price',
+        '/conditions',
+      ];
       const path = url.split('?')[0];
       if (!isLoggedIn && !publicPaths.includes(path)) {
         setAuthorized(false);

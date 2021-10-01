@@ -43,8 +43,9 @@ export default function SmallCentered() {
               </Link>
             </Box>
             <Text fontSize={'sm'}>
-              في أضمنلي نعمل كوسيط مالي لضمان توفية كل شروط البائع والمشتري ثم تحويل الأموال الى
-              الاتجاه الصحيح بعد تمام الصفقة
+              ظرا للاحتيالات التجارية التي تحدث عبر مواقع الشبكة العنكبوتية بشكل متكرر وكبير وللقظاء
+              عليها والحد منها قمنا بانشاء موقع اظمنلي الذي يظمن حدوث المبادلات التجارية دون الوقوع
+              في فخ الاحتيال الالكتروني الذي يقوم به اشخاص بحسابات مزيفة
             </Text>
           </Stack>
           <Stack align={'flex-start'}>
@@ -64,7 +65,7 @@ export default function SmallCentered() {
           <Stack align={'flex-start'}>
             <ListHeader>الدعم</ListHeader>
             <Link href={'#'}>صفحة الفايسبوك</Link>
-            <Link href={'#'}>شروط الاستخدام</Link>
+            <Link href={'/conditions'}>شروط الاستخدام</Link>
             <Link href={'#'}>معلومات</Link>
             <Link href={'#'}>سياسة الخصوصية</Link>
           </Stack>
