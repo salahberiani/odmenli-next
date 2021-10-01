@@ -5,10 +5,10 @@ const Axios = axios.create({
 });
 
 // let token;
-// if (process.browser) {
-// }
-let token = JSON.parse(localStorage?.getItem('zu')).state?.auth?.token;
+if (typeof window !== 'undefined') {
+  let token = JSON.parse(localStorage?.getItem('zu')).state?.auth?.token;
 
-Axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  Axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+}
 
 export default Axios;
