@@ -4,10 +4,10 @@ const Axios = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API,
 });
 
-let token;
-if (process.browser) {
-  token = JSON.parse(localStorage.getItem('zu')).state?.auth?.token;
-}
+// let token;
+// if (process.browser) {
+// }
+let token = JSON.parse(localStorage.getItem('zu')).state?.auth?.token;
 
 Axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
