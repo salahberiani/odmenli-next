@@ -72,6 +72,9 @@ function App() {
     },
   };
   const userid = useStore((state) => state.auth._id);
+  const token = useStore((state) => state.auth.token);
+  console.log(token);
+  console.log(userid);
 
   const [daman, setDaman] = useState();
   useEffect(() => {
@@ -84,7 +87,7 @@ function App() {
       }
     };
     getDaman();
-  }, [userid]);
+  }, [userid, token]);
   const columns = React.useMemo(
     () => [
       {
