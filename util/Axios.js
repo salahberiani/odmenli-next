@@ -7,7 +7,7 @@ const Axios = axios.create({
 // let token;
 // if (process.browser) {
 // }
-let token = JSON.parse(localStorage.getItem('zu')).state?.auth?.token;
+let token = JSON.parse(localStorage?.getItem('zu')).state?.auth?.token;
 
 Axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
