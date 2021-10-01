@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, Badge, Box, Button, Flex } from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
-import Axios from 'util/Axios';
+// import Axios from 'util/Axios';
+import useAxios from 'util/useAxios';
 import useStore from 'store';
 
 function DashTable({ columns, data }) {
@@ -71,10 +72,8 @@ function App() {
       color: 'green',
     },
   };
+  const Axios = useAxios();
   const userid = useStore((state) => state.auth._id);
-  const token = useStore((state) => state.auth.token);
-  console.log(token);
-  console.log(userid);
 
   const [daman, setDaman] = useState();
   useEffect(() => {
@@ -87,7 +86,7 @@ function App() {
       }
     };
     getDaman();
-  }, [userid, token]);
+  }, [userid, Axios]);
   const columns = React.useMemo(
     () => [
       {
