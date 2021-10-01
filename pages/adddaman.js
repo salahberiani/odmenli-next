@@ -138,7 +138,7 @@ export default function Adddaman() {
                 <FormControl id="email" isInvalid={errors.bayerFullName}>
                   <FormLabel>اسم الشاري</FormLabel>
                   <Input
-                    defaultValue={profile.fullName}
+                    defaultValue={profile?.fullName}
                     placeholder="اسم الشاري"
                     {...register('bayerFullName', {
                       required: 'هذا مطلوب',
@@ -153,7 +153,7 @@ export default function Adddaman() {
                 <FormControl id="email" isInvalid={errors.wilaya}>
                   <FormLabel>الولاية</FormLabel>
                   <Input
-                    defaultValue={profile.wilaya}
+                    defaultValue={profile?.wilaya}
                     placeholder="الولاية"
                     {...register('wilaya', {
                       required: 'هذا مطلوب',
@@ -166,7 +166,7 @@ export default function Adddaman() {
                 <FormControl id="email" isInvalid={errors.address}>
                   <FormLabel>العنوان</FormLabel>
                   <Input
-                    defaultValue={profile.address}
+                    defaultValue={profile?.address}
                     placeholder="العنوان"
                     {...register('address', {
                       required: 'هذا مطلوب',
@@ -179,7 +179,7 @@ export default function Adddaman() {
                 <FormControl id="email" isInvalid={errors.email}>
                   <FormLabel>البريد الالكتروني</FormLabel>
                   <Input
-                    defaultValue={profile.email}
+                    defaultValue={profile?.email}
                     placeholder="البريد الالكتروني"
                     type="email"
                     {...register('email', {
@@ -193,7 +193,7 @@ export default function Adddaman() {
                 <FormControl id="email" isInvalid={errors.bayerPhone}>
                   <FormLabel>رقم هاتف الخاص بك</FormLabel>
                   <Input
-                    defaultValue={profile.phone}
+                    defaultValue={profile?.phone}
                     placeholder="رقم هاتف الخاص بك"
                     {...register('bayerPhone', {
                       required: 'هذا مطلوب',
@@ -208,7 +208,7 @@ export default function Adddaman() {
                 <FormControl id="email" isInvalid={errors.bayerCcpNumber}>
                   <FormLabel>رقم ccp الخاص بك</FormLabel>
                   <Input
-                    defaultValue={profile.ccpnumber}
+                    defaultValue={profile?.ccpnumber}
                     placeholder="رقم ccp الخاص بك"
                     {...register('bayerCcpNumber', {
                       required: 'هذا مطلوب',
@@ -223,7 +223,7 @@ export default function Adddaman() {
                 <FormControl id="email" isInvalid={errors.bayerCcpKey}>
                   <FormLabel>مفتاح ال ccp الخاص بك</FormLabel>
                   <Input
-                    defaultValue={profile.ccpkey}
+                    defaultValue={profile?.ccpkey}
                     placeholder="مفتاح ال ccp الخاص بك"
                     {...register('bayerCcpKey', {
                       required: 'هذا مطلوب',
