@@ -9,11 +9,13 @@ import {
   FormErrorMessage,
   Box,
 } from '@chakra-ui/react';
-import Axios from 'util/Axios';
+import useAxios from 'util/useAxios';
+
 import { useForm } from 'react-hook-form';
 
 export default function Adddaman({ profile, setEdit }) {
   const toast = useToast();
+  const Axios = useAxios();
 
   const {
     handleSubmit,
@@ -45,6 +47,7 @@ export default function Adddaman({ profile, setEdit }) {
           <FormControl id="email" isInvalid={errors.fullName}>
             <FormLabel>الاسم الكامل</FormLabel>
             <Input
+              placeholder="الاسم الكامل"
               defaultValue={profile?.fullName}
               {...register('fullName', {
                 required: 'هذا مطلوب',
@@ -55,6 +58,7 @@ export default function Adddaman({ profile, setEdit }) {
           <FormControl id="email" isInvalid={errors.wilaya}>
             <FormLabel>الولاية</FormLabel>
             <Input
+              placeholder="الولاية"
               defaultValue={profile?.wilaya}
               {...register('wilaya', {
                 required: 'هذا مطلوب',
@@ -65,6 +69,7 @@ export default function Adddaman({ profile, setEdit }) {
           <FormControl id="email" isInvalid={errors.address}>
             <FormLabel>العنوان</FormLabel>
             <Input
+              placeholder="العنوان"
               defaultValue={profile?.address}
               {...register('address', {
                 required: 'هذا مطلوب',
@@ -74,14 +79,37 @@ export default function Adddaman({ profile, setEdit }) {
           </FormControl>
 
           <FormControl id="email" isInvalid={errors.phone}>
-            <FormLabel>رقم هاتف الشاري</FormLabel>
+            <FormLabel>رقم الهاتف</FormLabel>
             <Input
+              placeholder="رقم الهاتف"
               defaultValue={profile?.phone}
               {...register('phone', {
                 required: 'هذا مطلوب',
               })}
             />
             <FormErrorMessage>{errors.phone && errors.phone.message}</FormErrorMessage>
+          </FormControl>
+          <FormControl id="email" isInvalid={errors.ccpnumber}>
+            <FormLabel>رقم ccp </FormLabel>
+            <Input
+              placeholder="رقم ccp"
+              defaultValue={profile?.ccpnumber}
+              {...register('ccpnumber', {
+                required: 'هذا مطلوب',
+              })}
+            />
+            <FormErrorMessage>{errors.ccpnumber && errors.ccpnumber.message}</FormErrorMessage>
+          </FormControl>
+          <FormControl id="email" isInvalid={errors.ccpkey}>
+            <FormLabel>مفتاح ccp </FormLabel>
+            <Input
+              placeholder="مفتاح ccp"
+              defaultValue={profile?.ccpkey}
+              {...register('ccpkey', {
+                required: 'هذا مطلوب',
+              })}
+            />
+            <FormErrorMessage>{errors.ccpkey && errors.ccpkey.message}</FormErrorMessage>
           </FormControl>
 
           <Button

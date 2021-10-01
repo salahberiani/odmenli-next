@@ -120,6 +120,10 @@ function App() {
         Header: 'نوع',
         accessor: 'type',
       },
+      {
+        Header: 'المبلغ',
+        accessor: 'amount',
+      },
 
       {
         Header: 'الحالة',

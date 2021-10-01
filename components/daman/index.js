@@ -1,10 +1,11 @@
 import { Box, Button, useColorModeValue, Badge, Image } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 import { HiPencilAlt } from 'react-icons/hi';
-import Axios from 'util/Axios';
+
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 
+import useAxios from 'util/useAxios';
 import useStore from 'store';
 import Card from './Card';
 import CardContent from './CardContent';
@@ -13,6 +14,7 @@ import Property from './Property';
 const Edite = dynamic(() => import('./Edite'));
 
 export default function Index() {
+  const Axios = useAxios();
   const statusToArabic = {
     pending: {
       name: 'قيد التأكيد',
@@ -91,9 +93,11 @@ export default function Index() {
               {daman && (
                 <>
                   <Property label=" الاسم الكامل للشاري" value={daman.bayerFullName} />
-                  <Property label="البريد الالكتروني" value={daman.email} />
+                  {/* <Property label="البريد الالكتروني" value={daman.email} /> */}
                   <Property label="الولاية" value={daman.wilaya} />
                   <Property label="العنوان" value={daman.address} />
+                  <Property label="المبلغ" value={daman.amount + ' دج'} />
+                  <Property label="المبلغ بالعمولة المضافة" value={daman.amountWithOmola + ' دج'} />
                   <Property label="رقم الهاتف الشاري" value={daman.bayerPhone} />
                   <Property label="طريقة ارسال الأموال" value={daman.type} />
                   <Property label=" الاسم الكامل للبائع" value={daman.sellerFullName} />

@@ -29,7 +29,7 @@ const theme = extendTheme(
   },
   withDefaultVariant({
     variant: 'filled',
-    components: ['Input', 'Select'],
+    components: ['Input', 'Select', 'Textarea'],
   })
 );
 export default theme;

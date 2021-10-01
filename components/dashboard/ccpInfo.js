@@ -33,6 +33,9 @@ export default function Example() {
           </UnorderedList>
         </Alert>
       </Flex>
+      <Alert status="info">
+        لرؤية معلومات الضمان كاملة قم بالضغط على الرقم التعريفي في جدول الضمانات في الأسفل
+      </Alert>
     </>
   );
 }

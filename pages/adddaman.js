@@ -15,8 +15,10 @@ import {
   SimpleGrid,
   Container,
   Text,
+  Textarea,
+  Divider,
 } from '@chakra-ui/react';
-import Axios from 'util/Axios';
+import useAxios from 'util/useAxios';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -24,9 +26,31 @@ import useStore from 'store';
 
 export default function Adddaman() {
   const toast = useToast();
+  const Axios = useAxios();
 
   const router = useRouter();
   const userid = useStore((state) => state.auth._id);
+  const profile = useStore((state) => state.profile);
+  const [price, setPrice] = React.useState(0);
+
+  const handlePrice = (e) => {
+    console.log(typeof e.target.value);
+    if (Number(e.target.value) === 0) {
+      setPrice(0);
+    } else if (Number(e.target.value) <= 20000) {
+      setPrice(Number(e.target.value) + 250);
+    } else if (Number(e.target.value) <= 50000) {
+      setPrice(Number(e.target.value) + 350);
+    } else if (Number(e.target.value) <= 80000) {
+      setPrice(Number(e.target.value) + 450);
+    } else if (Number(e.target.value) <= 100000) {
+      setPrice(Number(e.target.value) + 600);
+    } else if (Number(e.target.value) <= 150000) {
+      setPrice(Number(e.target.value) + 800);
+    } else if (Number(e.target.value) <= 200000) {
+      setPrice(Number(e.target.value) + 1100);
+    }
+  };
 
   const {
     handleSubmit,
@@ -37,13 +61,19 @@ export default function Adddaman() {
     e.preventDefault();
     const { confirmImageUrl, ...rest } = values;
     const data = { ...rest, confirmImageUrl: confirmImageUrl[0], user: userid };
-    var form_data = new FormData();
-
+    let form_data = new FormData();
+    form_data.append('amountWithOmola', price);
     for (let key in data) {
       form_data.append(key, data[key]);
     }
     try {
       const res = await Axios.post(`/daman/add`, form_data);
+      toast({
+        title: 'تمت اضافة الضمان بنجاح',
+        status: 'success',
+        duration: 4000,
+        // isClosable: true,
+      });
       console.log(res);
       router.push('/dashboard');
     } catch (error) {
@@ -91,6 +121,9 @@ export default function Adddaman() {
                 ملئ بيانات الحساب الخاص بك ستجنبك ادخال معلوماتك عند انشاء الضمان في كل مرة{' '}
               </ListItem>
               <ListItem>
+                الطرف الأخر يمكن أن يكون بائع أو مستقل أو أي احد سيقدم لك نوع خدمة مقابل مال
+              </ListItem>
+              <ListItem>
                 بعد انشاء الضمان سيتم التحقق منه من قبل فريق العمل وذلك قد يأخذ لحظات قليلة وبعد ذلك
                 سيتم تحويل حالة الضمان الى مؤكد أن تأكدنا من ارسالك للأموال أو فشل تأكيد ان لم نتأكد
                 من ارسالك للاموال{' '}
@@ -105,6 +138,7 @@ export default function Adddaman() {
                 <FormControl id="email" isInvalid={errors.bayerFullName}>
                   <FormLabel>اسم الشاري</FormLabel>
                   <Input
+                    defaultValue={profile.fullName}
                     placeholder="اسم الشاري"
                     {...register('bayerFullName', {
                       required: 'هذا مطلوب',
@@ -119,6 +153,7 @@ export default function Adddaman() {
                 <FormControl id="email" isInvalid={errors.wilaya}>
                   <FormLabel>الولاية</FormLabel>
                   <Input
+                    defaultValue={profile.wilaya}
                     placeholder="الولاية"
                     {...register('wilaya', {
                       required: 'هذا مطلوب',
@@ -131,6 +166,7 @@ export default function Adddaman() {
                 <FormControl id="email" isInvalid={errors.address}>
                   <FormLabel>العنوان</FormLabel>
                   <Input
+                    defaultValue={profile.address}
                     placeholder="العنوان"
                     {...register('address', {
                       required: 'هذا مطلوب',
@@ -139,11 +175,12 @@ export default function Adddaman() {
                   <FormErrorMessage>{errors.address && errors.address.message}</FormErrorMessage>
                 </FormControl>
               </GridItem>
-              <GridItem colSpan={{ base: 2, md: 1 }}>
+              {/* <GridItem colSpan={{ base: 2, md: 1 }}>
                 <FormControl id="email" isInvalid={errors.email}>
                   <FormLabel>البريد الالكتروني</FormLabel>
                   <Input
-                    placeholder="البريد الالكتروني<"
+                    defaultValue={profile.email}
+                    placeholder="البريد الالكتروني"
                     type="email"
                     {...register('email', {
                       required: 'هذا مطلوب',
@@ -151,12 +188,13 @@ export default function Adddaman() {
                   />
                   <FormErrorMessage>{errors.email && errors.email.message}</FormErrorMessage>
                 </FormControl>
-              </GridItem>
+              </GridItem> */}
               <GridItem colSpan={{ base: 2, md: 1 }}>
                 <FormControl id="email" isInvalid={errors.bayerPhone}>
-                  <FormLabel>رقم هاتف الشاري</FormLabel>
+                  <FormLabel>رقم هاتف الخاص بك</FormLabel>
                   <Input
-                    placeholder="رقم هاتف الشاري"
+                    defaultValue={profile.phone}
+                    placeholder="رقم هاتف الخاص بك"
                     {...register('bayerPhone', {
                       required: 'هذا مطلوب',
                     })}
@@ -167,10 +205,64 @@ export default function Adddaman() {
                 </FormControl>
               </GridItem>
               <GridItem colSpan={{ base: 2, md: 1 }}>
-                <FormControl id="email" isInvalid={errors.sellerFullName}>
-                  <FormLabel>اسم البائع الكامل</FormLabel>
+                <FormControl id="email" isInvalid={errors.bayerCcpNumber}>
+                  <FormLabel>رقم ccp الخاص بك</FormLabel>
                   <Input
-                    placeholder="اسم البائع الكامل"
+                    defaultValue={profile.ccpnumber}
+                    placeholder="رقم ccp الخاص بك"
+                    {...register('bayerCcpNumber', {
+                      required: 'هذا مطلوب',
+                    })}
+                  />
+                  <FormErrorMessage>
+                    {errors.bayerCcpNumber && errors.bayerCcpNumber.message}
+                  </FormErrorMessage>
+                </FormControl>
+              </GridItem>
+              <GridItem colSpan={{ base: 2, md: 1 }}>
+                <FormControl id="email" isInvalid={errors.bayerCcpKey}>
+                  <FormLabel>مفتاح ال ccp الخاص بك</FormLabel>
+                  <Input
+                    defaultValue={profile.ccpkey}
+                    placeholder="مفتاح ال ccp الخاص بك"
+                    {...register('bayerCcpKey', {
+                      required: 'هذا مطلوب',
+                    })}
+                  />
+                  <FormErrorMessage>
+                    {errors.bayerCcpKey && errors.bayerCcpKey.message}
+                  </FormErrorMessage>
+                </FormControl>
+              </GridItem>
+              <GridItem colSpan={2}>
+                <Divider colorScheme="teal"></Divider>
+              </GridItem>
+              <GridItem colSpan={{ base: 2, md: 1 }}>
+                <FormControl onChange={handlePrice} id="email" isInvalid={errors.amount}>
+                  <FormLabel>مبلغ الضمان</FormLabel>
+                  <Input
+                    type="number"
+                    placeholder="مبلغ الضمان"
+                    {...register('amount', {
+                      required: 'هذا مطلوب',
+                    })}
+                  />
+                  <FormErrorMessage>{errors.amount && errors.amount.message}</FormErrorMessage>
+                </FormControl>
+              </GridItem>
+              <GridItem colSpan={{ base: 2, md: 1 }}>
+                <Text mt={8} fontSize="xl" fontWeight="bold" color="green.500">
+                  المبلغ المستحق مع العمولة {price} دج
+                </Text>
+              </GridItem>
+              <GridItem colSpan={2}>
+                <Divider colorScheme="teal"></Divider>
+              </GridItem>
+              <GridItem colSpan={{ base: 2, md: 1 }}>
+                <FormControl id="email" isInvalid={errors.sellerFullName}>
+                  <FormLabel>اسم الطرف الأخر الكامل</FormLabel>
+                  <Input
+                    placeholder="اسم الطرف الأخر الكامل"
                     {...register('sellerFullName', {
                       required: 'هذا مطلوب',
                     })}
@@ -182,9 +274,9 @@ export default function Adddaman() {
               </GridItem>
               <GridItem colSpan={{ base: 2, md: 1 }}>
                 <FormControl id="email" isInvalid={errors.sellerCcpNumber}>
-                  <FormLabel>رقم ccp الخاص بالبائع</FormLabel>
+                  <FormLabel>رقم ccp الخاص بالطرف الأخر</FormLabel>
                   <Input
-                    placeholder="رقم ccp الخاص بالبائع"
+                    placeholder="رقم ccp الخاص بالطرف الأخر"
                     {...register('sellerCcpNumber', {
                       required: 'هذا مطلوب',
                     })}
@@ -196,9 +288,9 @@ export default function Adddaman() {
               </GridItem>
               <GridItem colSpan={{ base: 2, md: 1 }}>
                 <FormControl id="email" isInvalid={errors.sellerCcpKey}>
-                  <FormLabel>مفتاح ال ccp الخاص بالبائع</FormLabel>
+                  <FormLabel>مفتاح ال ccp الخاص بالطرف الأخر</FormLabel>
                   <Input
-                    placeholder="مفتاح ال ccp الخاص بالبائع"
+                    placeholder="مفتاح ال ccp الخاص بالطرف الأخر"
                     {...register('sellerCcpKey', {
                       required: 'هذا مطلوب',
                     })}
@@ -210,9 +302,9 @@ export default function Adddaman() {
               </GridItem>
               <GridItem colSpan={{ base: 2, md: 1 }}>
                 <FormControl id="email" isInvalid={errors.sellerPhone}>
-                  <FormLabel>رقم هاتف البائع</FormLabel>
+                  <FormLabel>رقم هاتف الطرف الأخر</FormLabel>
                   <Input
-                    placeholder="رقم هاتف البائع"
+                    placeholder="رقم هاتف الطرف الأخر"
                     {...register('sellerPhone', {
                       required: 'هذا مطلوب',
                     })}
@@ -222,7 +314,7 @@ export default function Adddaman() {
                   </FormErrorMessage>
                 </FormControl>
               </GridItem>
-              <GridItem colSpan={{ base: 2, md: 1 }}>
+              <GridItem colSpan={2}>
                 <FormControl id="email" isInvalid={errors.confirmImageUrl}>
                   <FormLabel>وثيقة تأكيد ارسال الأموال</FormLabel>
                   <Input
@@ -234,6 +326,20 @@ export default function Adddaman() {
                   />
                   <FormErrorMessage>
                     {errors.confirmImageUrl && errors.confirmImageUrl.message}
+                  </FormErrorMessage>
+                </FormControl>
+              </GridItem>
+              <GridItem colSpan={2}>
+                <FormControl id="email" isInvalid={errors.description}>
+                  <FormLabel>وصف توضيحي موجز</FormLabel>
+                  <Textarea
+                    placeholder="وصف توضيحي موجز"
+                    {...register('description', {
+                      required: 'هذا مطلوب',
+                    })}
+                  />
+                  <FormErrorMessage>
+                    {errors.description && errors.description.message}
                   </FormErrorMessage>
                 </FormControl>
               </GridItem>

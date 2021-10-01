@@ -6,6 +6,8 @@ const useStore = create(
     (set, get) => ({
       isLoggedIn: false,
       auth: null,
+      profile: null,
+      setProfile: (payload) => set({ profile: payload }),
       login: (payload) => set({ isLoggedIn: true, auth: payload }),
       logout: () => {
         window.location.replace('/');

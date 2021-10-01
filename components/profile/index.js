@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 import { HiPencilAlt } from 'react-icons/hi';
-import Axios from 'util/Axios';
+import useAxios from 'util/useAxios';
 
 import Card from './Card';
 import CardContent from './CardContent';
@@ -13,10 +13,13 @@ const Edite = dynamic(() => import('./Edite'));
 import useStore from 'store';
 
 export default function Index() {
+  const Axios = useAxios();
   const _id = useStore((state) => state.auth.profile);
+  const setProfile = useStore((state) => state.setProfile);
+  const profile = useStore((state) => state.profile);
   const [edit, setEdit] = useState(false);
 
-  const [profile, setProfile] = useState();
+  //   const [profile, setProfile] = useState();
   useEffect(() => {
     const getProfile = async () => {
       try {
@@ -27,7 +30,7 @@ export default function Index() {
       }
     };
     getProfile();
-  }, [_id, edit]);
+  }, [_id, edit, Axios, setProfile]);
   console.log(profile);
   return (
     <Box
@@ -69,6 +72,11 @@ export default function Index() {
             <Property label="الولاية" value={profile?.wilaya ? profile?.wilaya : 'لم يحدد بعد'} />
             <Property label="العنوان" value={profile?.address ? profile?.address : 'لم يحدد بعد'} />
             <Property label="رقم الهاتف" value={profile?.phone ? profile?.phone : 'لم يحدد بعد'} />
+            <Property
+              label="رقم ccp"
+              value={profile?.ccpnumber ? profile?.ccpnumber : 'لم يحدد بعد'}
+            />
+            <Property label="مفتاح ccp" value={profile?.ccpkey ? profile?.ccpkey : 'لم يحدد بعد'} />
           </CardContent>
         )}
       </Card>
