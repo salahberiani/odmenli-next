@@ -105,7 +105,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <RtlProvider>
-        <Box bg="gray.50">
+        <Box>
           <motion.div
             key={router.route}
             initial="pageInit"

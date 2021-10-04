@@ -13,7 +13,7 @@ class Document extends NextDocument {
     // const dir = locale === "ar" ? "rtl" : "ltr"
     const dir = 'rtl';
     return (
-      <Html dir={dir} lang={locale}>
+      <Html dir={dir} lang={'ar'}>
         <Head>
           <meta name="robots" content="index, follow" />
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />

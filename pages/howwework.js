@@ -23,21 +23,23 @@ export default function howwework() {
         المنصة ومن ثم تأكيد ارسال الأموال عبر ارفاق وثيقة تثبت عملية الارسال وبعد أن نتأكد في أضمنلي
         من استلام الأموال نقوم بالاتصال بالبائع لنأكد أن الشاري قام بضمان أمواله
       </Text>
-      <Stack align="center">
-        <Image alt="" width={800} height={450} src="/images/hww0.png"></Image>
-      </Stack>
+      <Box>
+        <Image layout="responsive" alt="" width={800} height={450} src="/images/hww0.png"></Image>
+      </Box>
       <Text my="8" fontSize="xl">
         بعد ذلك نقوم بالتأكيد مع الشاري أن شروط الصفقة تمت وتم استلام الغرض المباع من طرف البائع
       </Text>
-      <Stack align="center" spacing={16}>
-        <Image alt="" width={800} height={450} src="/images/hww1.png"></Image>
-      </Stack>
+      <Box>
+        <Image layout="responsive" alt="" width={800} height={450} src="/images/hww1.png"></Image>
+      </Box>
       <Text my="8" fontSize="xl">
         بعد ذلك نقوم بالتأكيد مع البائع ويتم ارسال الأموال الى البائع
       </Text>
-      <Stack align="center" spacing={16}>
-        <Image alt="" width={800} height={450} src="/images/hww2.png"></Image>
-      </Stack>
+      {/* <Stack align="center" spacing={16}> */}
+      <Box>
+        <Image layout="responsive" alt="" width={800} height={450} src="/images/hww2.png"></Image>
+      </Box>
+      {/* </Stack> */}
       <Text my="8" fontSize="xl">
         المثال المذكور في الأعلى كان فقط للتوضيح ولا تتقيد الصفقات به فقد تكون الصفقة عبارة عن عملية
         شراء أو توضيف موضف حر لأداء خدمة أو تبادل عملات ...الخ

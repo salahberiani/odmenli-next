@@ -31,7 +31,7 @@ export default function SplitScreen() {
       <Hero></Hero>
       <Services></Services>
       <Features></Features>
-      <Collabs></Collabs>
+      {/* <Collabs></Collabs> */}
       <Testmonials></Testmonials>
       <Questions></Questions>
     </>

@@ -1,8 +1,8 @@
-import { Box, Heading, Stack, Text, Container, SimpleGrid, Flex } from '@chakra-ui/react';
+import { Box, Heading, Stack, Text, Container, SimpleGrid, Flex, Image } from '@chakra-ui/react';
 export default function collabs() {
   return (
     <Box>
-      <Stack spacing={0} align={'center'}>
+      {/* <Stack spacing={0} align={'center'}>
         <Heading textAlign="center" my="2">
           بعض الشركات التي تعمل معنا
         </Heading>
@@ -31,7 +31,8 @@ export default function collabs() {
             <Text>hqsjdqhjdhqj</Text>
           </Flex>
         </SimpleGrid>
-      </Container>
+      </Container> */}
+      <Image w="300px" h="500px" alt="" src="/images/i1.jpg"></Image>
     </Box>
   );
 }

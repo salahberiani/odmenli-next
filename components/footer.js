@@ -45,9 +45,9 @@ export default function SmallCentered() {
               </Link>
             </Box>
             <Text fontSize={'sm'}>
-              ظرا للاحتيالات التجارية التي تحدث عبر مواقع الشبكة العنكبوتية بشكل متكرر وكبير وللقظاء
-              عليها والحد منها قمنا بانشاء موقع اظمنلي الذي يظمن حدوث المبادلات التجارية دون الوقوع
-              في فخ الاحتيال الالكتروني الذي يقوم به اشخاص بحسابات مزيفة
+              نظرا للاحتيالات التجارية التي تحدث عبر مواقع الشبكة العنكبوتية بشكل متكرر وكبير
+              وللقظاء عليها والحد منها قمنا بانشاء موقع اظمنلي الذي يظمن حدوث المبادلات التجارية دون
+              الوقوع في فخ الاحتيال الالكتروني الذي يقوم به اشخاص بحسابات مزيفة
             </Text>
           </Stack>
           <Stack align={'flex-start'}>
@@ -72,14 +72,30 @@ export default function SmallCentered() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>الدعم</ListHeader>
-            <Link href={'#'}>صفحة الفايسبوك</Link>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href={
+                'https://www.facebook.com/%D8%A3%D8%B6%D9%85%D9%86%D9%84%D9%8A-109209821521133/?ref=pages_you_manage'
+              }
+            >
+              صفحة الفايسبوك
+            </a>
             <Link href={'/conditions'}>شروط الاستخدام</Link>
             <Link href={'#'}>معلومات</Link>
             <Link href={'#'}>سياسة الخصوصية</Link>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>تابعنا</ListHeader>
-            <Link href={'#'}>فايسبوك</Link>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href={
+                'https://www.facebook.com/%D8%A3%D8%B6%D9%85%D9%86%D9%84%D9%8A-109209821521133/?ref=pages_you_manage'
+              }
+            >
+              فايسبوك
+            </a>
           </Stack>
         </SimpleGrid>
       </Container>
