@@ -34,6 +34,7 @@ class Document extends NextDocument {
             content="نظرا للاحتيالات التجارية التي تحدث عبر مواقع الشبكة العنكبوتية بشكل متكرر وكبير وللقظاء عليها والحد منها قمنا بانشاء موقع اظمنلي الذي يظمن حدوث المبادلات التجارية دون الوقوع في فخ الاحتيال الالكتروني الذي يقوم به اشخاص بحسابات مزيفة"
           />
           <meta property="og:image" content="https://www.odmenli.com/main.png" />
+          <meta property="fb:app_id" content="428029188262416" />
 
           <script
             async

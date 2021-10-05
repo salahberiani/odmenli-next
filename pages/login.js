@@ -66,7 +66,7 @@ export default function SimpleCard() {
       minH={'100%'}
       align={'center'}
       justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}
+      //   bg={useColorModeValue('gray.50', 'gray.800')}
     >
       <Head>
         <title>تسجيل الدخول</title>
