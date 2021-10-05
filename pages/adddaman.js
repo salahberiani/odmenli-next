@@ -175,20 +175,6 @@ export default function Adddaman() {
                   <FormErrorMessage>{errors.address && errors.address.message}</FormErrorMessage>
                 </FormControl>
               </GridItem>
-              {/* <GridItem colSpan={{ base: 2, md: 1 }}>
-                <FormControl id="email" isInvalid={errors.email}>
-                  <FormLabel>البريد الالكتروني</FormLabel>
-                  <Input
-                    defaultValue={profile?.email}
-                    placeholder="البريد الالكتروني"
-                    type="email"
-                    {...register('email', {
-                      required: 'هذا مطلوب',
-                    })}
-                  />
-                  <FormErrorMessage>{errors.email && errors.email.message}</FormErrorMessage>
-                </FormControl>
-              </GridItem> */}
               <GridItem colSpan={{ base: 2, md: 1 }}>
                 <FormControl id="email" isInvalid={errors.bayerPhone}>
                   <FormLabel>رقم هاتف الخاص بك</FormLabel>
