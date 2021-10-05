@@ -22,9 +22,9 @@ class Document extends NextDocument {
             name="description"
             content="نظرا للاحتيالات التجارية التي تحدث عبر مواقع الشبكة العنكبوتية بشكل متكرر وكبير وللقظاء عليها والحد منها قمنا بانشاء موقع اظمنلي الذي يظمن حدوث المبادلات التجارية دون الوقوع في فخ الاحتيال الالكتروني الذي يقوم به اشخاص بحسابات مزيفة"
           />
-          {/* <link rel="manifest" href="/manifest.json" />
+          <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icon.png"></link>
-          <meta name="theme-color" content="#fff" /> */}
+          <meta name="theme-color" content="#fff" />
           <link rel="canonical" href="https://www.odmenli.com" />
           <meta property="og:url" content="https://www.odmenli.com" />
           <meta property="og:type" content="website" />

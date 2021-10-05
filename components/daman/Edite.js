@@ -288,7 +288,7 @@ export default function Adddaman({ setEdit, daman }) {
                 bg: 'green.500',
               }}
             >
-              أنشئ
+              تعديل
             </Button>
           </GridItem>
         </SimpleGrid>
