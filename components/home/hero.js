@@ -17,7 +17,7 @@ const MotionBox = motion(Box);
 
 export default function SplitScreen() {
   return (
-    <Stack minH={'50%'} direction={{ base: 'column', md: 'row' }}>
+    <Stack minH={'50%'} direction={{ base: 'column', lg: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={6} w={'full'} maxW={'lg'}>
           <Heading fontWeight="extrabold" fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}>
@@ -51,7 +51,7 @@ export default function SplitScreen() {
           </Stack>
         </Stack>
       </Flex>
-      <Flex py="16" flex={1}>
+      <Flex py="16" flex={1.5}>
         {/* <Image
           alt={'Login Image'}
           objectFit={'cover'}
@@ -66,7 +66,7 @@ export default function SplitScreen() {
             initial="hidden"
             animate="visible"
             p="4"
-            ml={{ base: '20px', md: '100px' }}
+            ml={{ base: '0px', md: '100px' }}
             variants={{
               hidden: {
                 scale: 0.8,
@@ -83,7 +83,7 @@ export default function SplitScreen() {
             bg="gray.200"
           >
             <Flex
-              direction={{ base: 'column', md: 'row' }}
+              direction={{ base: 'row', md: 'row' }}
               justify={{ base: 'center', md: 'flex-start' }}
             >
               <Avatar mx="3"></Avatar>
@@ -99,8 +99,8 @@ export default function SplitScreen() {
             initial="hidden"
             animate="visible"
             p="4"
-            mr={{ base: '20px', md: '100px' }}
-            mt="-10px"
+            mr={{ base: '0px', md: '100px' }}
+            mt={{ base: '20px', lg: '-10px' }}
             variants={{
               hidden: {
                 scale: 0.8,
@@ -117,7 +117,7 @@ export default function SplitScreen() {
             bg="gray.300"
           >
             <Flex
-              direction={{ base: 'column', md: 'row' }}
+              direction={{ base: 'row', md: 'row' }}
               justify={{ base: 'center', md: 'flex-start' }}
             >
               <Avatar mx="3"></Avatar>
@@ -127,14 +127,14 @@ export default function SplitScreen() {
               </Text>
             </Flex>
           </MotionBox>
-          <Box mt="8" mr={{ base: '4', md: '16' }}>
+          <Box mt={{ base: '20px', md: '8' }} mr={{ base: '0', md: '16' }}>
             <MotionBox
               shadow="xl"
               rounded="xl"
               initial="hidden"
               animate="visible"
               p="4"
-              ml={{ base: '10px', md: '50px' }}
+              ml={{ base: '0px', md: '50px' }}
               variants={{
                 hidden: {
                   scale: 0.8,
@@ -151,7 +151,7 @@ export default function SplitScreen() {
               bg="gray.200"
             >
               <Flex
-                direction={{ base: 'column', md: 'row' }}
+                direction={{ base: 'row', md: 'row' }}
                 justify={{ base: 'center', md: 'flex-start' }}
               >
                 <Avatar mx="3"></Avatar>
@@ -167,8 +167,8 @@ export default function SplitScreen() {
               initial="hidden"
               animate="visible"
               p="4"
-              mr={{ base: '10px', md: '50px' }}
-              mt="-10px"
+              mr={{ base: '0px', md: '50px' }}
+              mt={{ base: '20px', lg: '-10px' }}
               variants={{
                 hidden: {
                   scale: 0.8,
@@ -185,7 +185,7 @@ export default function SplitScreen() {
               bg="gray.300"
             >
               <Flex
-                direction={{ base: 'column', md: 'row' }}
+                direction={{ base: 'row', md: 'row' }}
                 justify={{ base: 'center', md: 'flex-start' }}
               >
                 <Avatar mx="3"></Avatar>

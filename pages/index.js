@@ -22,7 +22,7 @@ export default function SplitScreen() {
   return (
     <>
       <Head>
-        <title>أضمنلي</title>
+        <title>odmenli | أضمنلي</title>
       </Head>
       <Hero></Hero>
       <Services></Services>
