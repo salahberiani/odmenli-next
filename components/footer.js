@@ -27,7 +27,7 @@ export default function SmallCentered() {
         <SimpleGrid templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }} spacing={8}>
           <Stack spacing={6}>
             <Box>
-              <Link passHref href="/">
+              <Link prefetch={false} passHref href="/">
                 <Flex>
                   <Box color="green.500" fontSize="4xl">
                     <RiShieldCheckFill></RiShieldCheckFill>
@@ -52,22 +52,38 @@ export default function SmallCentered() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>روابط</ListHeader>
-            <Link href={'/'}>الرئيسية</Link>
-            <Link href={'/price'}>أسعار التعامل</Link>
-            <Link href={'/howwework'}>كيف نعمل</Link>
-            <Link href={'/about'}>عنا</Link>
-            <Link href={'/login'}>تسجيل</Link>
-            <Link href={'/register'}>تسجيل الدخول</Link>
+            <Link prefetch={false} href={'/'}>
+              الرئيسية
+            </Link>
+            <Link prefetch={false} href={'/price'}>
+              أسعار التعامل
+            </Link>
+            <Link prefetch={false} href={'/howwework'}>
+              كيف نعمل
+            </Link>
+            <Link prefetch={false} href={'/about'}>
+              عنا
+            </Link>
+            <Link prefetch={false} href={'/login'}>
+              تسجيل
+            </Link>
+            <Link prefetch={false} href={'/register'}>
+              تسجيل الدخول
+            </Link>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>تواصل معنا</ListHeader>
             <HStack spacing={3}>
               <AiFillPhone></AiFillPhone>
-              <Link href={'#'}>0664312585</Link>
+              <Link prefetch={false} href={'#'}>
+                0664312585
+              </Link>
             </HStack>
             <HStack spacing={3}>
               <AiFillPhone></AiFillPhone>
-              <Link href={'#'}>0676244712</Link>
+              <Link prefetch={false} href={'#'}>
+                0676244712
+              </Link>
             </HStack>
           </Stack>
           <Stack align={'flex-start'}>
@@ -81,9 +97,15 @@ export default function SmallCentered() {
             >
               صفحة الفايسبوك
             </a>
-            <Link href={'/conditions'}>شروط الاستخدام</Link>
-            <Link href={'#'}>معلومات</Link>
-            <Link href={'#'}>سياسة الخصوصية</Link>
+            <Link prefetch={false} href={'/conditions'}>
+              شروط الاستخدام
+            </Link>
+            <Link prefetch={false} href={'#'}>
+              معلومات
+            </Link>
+            <Link prefetch={false} href={'#'}>
+              سياسة الخصوصية
+            </Link>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>تابعنا</ListHeader>

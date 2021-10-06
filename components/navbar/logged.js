@@ -9,17 +9,17 @@ export default function LoggedinMenu() {
 
   return (
     <>
-      <Link passHref href="/price">
+      <Link prefetch={false} passHref href="/price">
         <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
           أسعار التعامل
         </Button>
       </Link>
-      <Link passHref href="/howwework">
+      <Link prefetch={false} passHref href="/howwework">
         <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
           كيف نعمل
         </Button>
       </Link>
-      <Link passHref href="/dashboard">
+      <Link prefetch={false} passHref href="/dashboard">
         <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
           المنصة
         </Button>
@@ -29,7 +29,7 @@ export default function LoggedinMenu() {
           الحساب
         </MenuButton>
         <MenuList>
-          <Link passHref href="/profile">
+          <Link prefetch={false} passHref href="/profile">
             <MenuItem>معلومات الحساب</MenuItem>
           </Link>
           <MenuItem onClick={logout}>تسجيل الخروج</MenuItem>
