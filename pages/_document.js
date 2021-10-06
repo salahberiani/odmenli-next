@@ -25,6 +25,11 @@ class Document extends NextDocument {
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icon.png"></link>
           <meta name="theme-color" content="#fff" />
+          <link
+            rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+            as="font"
+          />
           <link rel="canonical" href="https://www.odmenli.com" />
           <meta property="og:url" content="https://www.odmenli.com" />
           <meta property="og:type" content="website" />
