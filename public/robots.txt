@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /*
 
-Sitemap: https://odmenli.com/api/sitemaps.xml
+Sitemap: https://odmenli.com/api/sitemap
