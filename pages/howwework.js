@@ -24,20 +24,44 @@ export default function howwework() {
         من استلام الأموال نقوم بالاتصال بالبائع لنأكد أن الشاري قام بضمان أمواله
       </Text>
       <Box>
-        <Image layout="responsive" alt="" width={800} height={450} src="/images/hww0.png"></Image>
+        <Image
+          placeholder="blur"
+          blurDataURL="/images/hww00.png"
+          layout="responsive"
+          alt=""
+          width={800}
+          height={450}
+          src="/images/hww0.png"
+        ></Image>
       </Box>
       <Text my="8" fontSize="xl">
         بعد ذلك نقوم بالتأكيد مع الشاري أن شروط الصفقة تمت وتم استلام الغرض المباع من طرف البائع
       </Text>
       <Box>
-        <Image layout="responsive" alt="" width={800} height={450} src="/images/hww1.png"></Image>
+        <Image
+          placeholder="blur"
+          blurDataURL="/images/hww11.png"
+          layout="responsive"
+          alt=""
+          width={800}
+          height={450}
+          src="/images/hww1.png"
+        ></Image>
       </Box>
       <Text my="8" fontSize="xl">
         بعد ذلك نقوم بالتأكيد مع البائع ويتم ارسال الأموال الى البائع
       </Text>
       {/* <Stack align="center" spacing={16}> */}
       <Box>
-        <Image layout="responsive" alt="" width={800} height={450} src="/images/hww2.png"></Image>
+        <Image
+          placeholder="blur"
+          blurDataURL="/images/hww22.png"
+          layout="responsive"
+          alt=""
+          width={800}
+          height={450}
+          src="/images/hww2.png"
+        ></Image>
       </Box>
       {/* </Stack> */}
       <Text my="8" fontSize="xl">
