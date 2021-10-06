@@ -15,6 +15,7 @@ import {
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { RiShieldCheckFill } from 'react-icons/ri';
 import { AiFillPhone } from 'react-icons/ai';
+import { MdEmail } from 'react-icons/md';
 import Link from 'next/link';
 
 export default function SmallCentered() {
@@ -75,14 +76,20 @@ export default function SmallCentered() {
             <ListHeader>تواصل معنا</ListHeader>
             <HStack spacing={3}>
               <AiFillPhone></AiFillPhone>
-              <Link prefetch={false} href={'#'}>
+              <Link prefetch={false} href={'tel:0664312585'}>
                 0664312585
               </Link>
             </HStack>
             <HStack spacing={3}>
               <AiFillPhone></AiFillPhone>
-              <Link prefetch={false} href={'#'}>
+              <Link prefetch={false} href={'tel:0676244712'}>
                 0676244712
+              </Link>
+            </HStack>
+            <HStack spacing={3}>
+              <MdEmail></MdEmail>
+              <Link prefetch={false} href={'mailto:odmenli.app@gmail.com'}>
+                odmenli.app@gmail.com
               </Link>
             </HStack>
           </Stack>
