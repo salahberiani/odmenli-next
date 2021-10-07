@@ -86,7 +86,7 @@ function App() {
       }
     };
     getDaman();
-  }, [userid, Axios]);
+  }, []);
   const columns = React.useMemo(
     () => [
       {
