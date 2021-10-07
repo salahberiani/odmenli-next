@@ -86,7 +86,7 @@ export default function SplitScreen() {
               direction={{ base: 'row', md: 'row' }}
               justify={{ base: 'center', md: 'flex-start' }}
             >
-              <Avatar mx="3"></Avatar>
+              <Avatar src="/images/a4.jpg" mx="3"></Avatar>
               <Text>
                 لقد تعرضت للأحتيال سابقا في مبلغ معتبر حيث أنني وضعت الثقة في شخص محتال وكانت
                 النتيجة أنني خسرت المبلغ دون أي أمل لاسترداده لكن مع أضمنلي لا احتيال بعد اليوم
@@ -120,7 +120,7 @@ export default function SplitScreen() {
               direction={{ base: 'row', md: 'row' }}
               justify={{ base: 'center', md: 'flex-start' }}
             >
-              <Avatar mx="3"></Avatar>
+              <Avatar src="/images/a3.jpg" mx="3"></Avatar>
               <Text>
                 كنت دائما متردد حيال التعامل عبر الانترنت لأنني داءما ما كنت أجد اناس في منصات
                 التواصل الاجتماعي قد تم الاحتيال عليهم في مبالغ مالية ولطالما أردت أن تكون هناك
@@ -155,7 +155,7 @@ export default function SplitScreen() {
                 direction={{ base: 'row', md: 'row' }}
                 justify={{ base: 'center', md: 'flex-start' }}
               >
-                <Avatar mx="3"></Avatar>
+                <Avatar src="/images/a1.jpg" mx="3"></Avatar>
                 <Text>
                   صراحة عندما رأيت المنصة لأول مرة لم أرد استخدامها لأنني ظننت أن أسعار التعامل
                   الخاصة بهم ستكون عالية لكن بعد مدة وجدت صفقة جيدة ولم أرد تفويتهالكن كنت أريد
@@ -191,7 +191,7 @@ export default function SplitScreen() {
                 direction={{ base: 'row', md: 'row' }}
                 justify={{ base: 'center', md: 'flex-start' }}
               >
-                <Avatar mx="3"></Avatar>
+                <Avatar src="/images/a.jpg" mx="3"></Avatar>
                 <Text>
                   المنصة جاءت في وقت يعد فيه الاحتيال في الجزائر في ذروته و أكثر المتضررين من النساء
                   والشباب الصغار لأنهم لم يختبرو الاحتيال مسبقا ولكن الأن عبر أضمنلي يمكن لأ امراة

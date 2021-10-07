@@ -100,7 +100,7 @@ export default function WithSpeechBubbles() {
                 اصبح من المستحيل ان اقع في فخ الاحتيال نتمنى لهم التوفيق والمزيد من النجاحات
               </TestimonialText>
             </TestimonialContent>
-            <TestimonialAvatar name={'رضا ********'} />
+            <TestimonialAvatar name={'لعبيدي حميد'} src="/images/a5.jpg" />
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
@@ -111,7 +111,8 @@ export default function WithSpeechBubbles() {
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
-              name={'محمد ******'}
+              src="/images/a6.jpg"
+              name={'ريان حلوي'}
               //   title={'CEO at ABC Corporation'}
             />
           </Testimonial>
@@ -124,7 +125,7 @@ export default function WithSpeechBubbles() {
                 اظمنلي وقد قامو باللازم حيث انه ليس هناك اي ثغرة لديهم للوقوع في الاحتيال
               </TestimonialText>
             </TestimonialContent>
-            <TestimonialAvatar name={'عبد الرحمان ********'} />
+            <TestimonialAvatar src="/images/a7.jpg" name={'عبد الرحمان براهمية'} />
           </Testimonial>
         </Stack>
       </Container>
