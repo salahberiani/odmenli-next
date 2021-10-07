@@ -32,6 +32,12 @@ export default function Adddaman() {
   const userid = useStore((state) => state.auth._id);
   const profile = useStore((state) => state.profile);
   const [price, setPrice] = React.useState(0);
+  const {
+    handleSubmit,
+    register,
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm();
 
   const handlePrice = (e) => {
     console.log(typeof e.target.value);
@@ -50,13 +56,14 @@ export default function Adddaman() {
     } else if (Number(e.target.value) <= 200000) {
       setPrice(Number(e.target.value) + 1100);
     }
+    //  else if (Number(e.target.value) > 200000) {
+    //   setError(`amount`, {
+    //     type: 'string',
+    //     message: 'الحد الأقصى حاليا هو 200000',
+    //   });
+    // }
   };
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
-  } = useForm();
   async function onSubmit(values, e) {
     e.preventDefault();
     const { confirmImageUrl, ...rest } = values;
@@ -231,9 +238,13 @@ export default function Adddaman() {
                     placeholder="مبلغ الضمان"
                     {...register('amount', {
                       required: 'هذا مطلوب',
+                      max: 200000,
                     })}
                   />
                   <FormErrorMessage>{errors.amount && errors.amount.message}</FormErrorMessage>
+                  <FormErrorMessage>
+                    {errors.amount?.type === 'max' && 'الحد الأقصى حاليا هو 200000'}
+                  </FormErrorMessage>
                 </FormControl>
               </GridItem>
               <GridItem colSpan={{ base: 2, md: 1 }}>
