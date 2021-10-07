@@ -12,6 +12,7 @@ import {
   Th,
   Td,
   useBreakpointValue,
+  Alert,
 } from '@chakra-ui/react';
 import Head from 'next/head';
 
@@ -45,6 +46,9 @@ export default function Price() {
       <Head>
         <title>أسعار التعامل</title>
       </Head>
+      <Alert my="8" status="info">
+        الأسعار الحالية لن تكون ثابتة سيتم تغييرها لتتناسب مع المبالغ الكبيرة
+      </Alert>
       <SimpleGrid columns={2} columnGap={6} rowGap={3}>
         <GridItem colSpan={{ base: 2, md: 1 }}>
           <Input onChange={handlePrice} type="number" placeholder="المبلغ"></Input>

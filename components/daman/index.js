@@ -98,12 +98,12 @@ export default function Index() {
                   <Property label="العنوان" value={daman.address} />
                   <Property label="المبلغ" value={daman.amount + ' دج'} />
                   <Property label="المبلغ بالعمولة المضافة" value={daman.amountWithOmola + ' دج'} />
-                  <Property label="رقم الهاتف الشاري" value={daman.bayerPhone} />
+                  <Property label="رقم الهاتف الخاص بك" value={daman.bayerPhone} />
                   <Property label="طريقة ارسال الأموال" value={daman.type} />
-                  <Property label=" الاسم الكامل للبائع" value={daman.sellerFullName} />
-                  <Property label="رقم الهاتف البائع" value={daman.sellerPhone} />
-                  <Property label="رقم ccp البائع" value={daman.sellerCcpNumber} />
-                  <Property label="مفتاح ccp البائع" value={daman.sellerCcpKey} />
+                  <Property label=" الاسم الكامل للطرف الأخر" value={daman.sellerFullName} />
+                  <Property label="رقم الهاتف الطرف الأخر" value={daman.sellerPhone} />
+                  <Property label="رقم ccp الطرف الأخر" value={daman.sellerCcpNumber} />
+                  <Property label="مفتاح ccp الطرف الأخر" value={daman.sellerCcpKey} />
                   <Property
                     label="حالة الضمان"
                     value={

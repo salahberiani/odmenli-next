@@ -18,7 +18,12 @@ function DashTable({ columns, data }) {
 
   // Render the UI for your table
   return (
-    <Table fontSize="xl" className="responsive-table" bg="white" {...getTableProps()}>
+    <Table
+      fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
+      className="responsive-table"
+      bg="white"
+      {...getTableProps()}
+    >
       <Thead>
         {headerGroups.map((headerGroup, i) => (
           <Tr key={i} {...headerGroup.getHeaderGroupProps()}>
@@ -34,7 +39,7 @@ function DashTable({ columns, data }) {
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <Tr _hover={{ bg: 'green.50' }} key={i} {...row.getRowProps()}>
+            <Tr p={6} _hover={{ bg: 'green.50' }} key={i} {...row.getRowProps()}>
               {row.cells.map((cell, i) => {
                 console.log(cell);
                 return (
@@ -105,17 +110,17 @@ function App() {
           );
         },
       },
+      //   {
+      //     Header: 'اسم الشاري',
+      //     accessor: 'bayerFullName',
+      //   },
       {
-        Header: 'اسم الشاري',
-        accessor: 'bayerFullName',
-      },
-      {
-        Header: 'اسم البائع',
+        Header: 'اسم الطرف الأخر',
         accessor: 'sellerFullName',
       },
 
       {
-        Header: 'رقم البائع',
+        Header: 'رقم الطرف الأخر',
         accessor: 'sellerPhone',
       },
       {
@@ -125,6 +130,7 @@ function App() {
       {
         Header: 'المبلغ',
         accessor: 'amount',
+        Cell: ({ cell }) => <Badge fontSize="0.8em"> {cell.value} دج</Badge>,
       },
 
       {
@@ -150,9 +156,9 @@ function App() {
           </Button>
         </Link>
       </Flex>
-      {/* <Box shadow="xl" w="100%" overflowX={{ base: 'scroll', md: 'hidden' }} overflowY="hidden"> */}
-      {daman && <DashTable columns={columns} data={daman} />}
-      {/* </Box> */}
+      <Box shadow="lg" w="100%" overflowX={{ base: 'scroll', md: 'hidden' }} overflowY="hidden">
+        {daman && <DashTable columns={columns} data={daman} />}
+      </Box>
     </Box>
   );
 }

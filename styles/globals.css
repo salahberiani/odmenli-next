@@ -55,15 +55,15 @@ h6 {
 
 .responsive-table {
   width: 100%;
-  margin: 0;
-  padding: 0;
-  border-collapse: collapse;
-  border-spacing: 0;
+  /* margin: 0;
+  padding: 0; */
+  /* border-collapse: collapse;
+  border-spacing: 0; */
 }
 .responsive-table thead {
   display: none;
   visibility: hidden;
-  background: #fafafa;
+  /* background: #fafafa; */
 }
 @media screen and (min-width: 1000px) {
   .responsive-table thead {
@@ -74,8 +74,8 @@ h6 {
 .responsive-table tr {
   /* border: 1px solid #ddd; */
   /* border-bottom: 2px solid #ddd; */
-  padding: 5px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
   display: block;
 }
 @media screen and (min-width: 1000px) {
@@ -84,9 +84,9 @@ h6 {
     /* border-bottom-width: 1px; */
     margin-bottom: 0;
   }
-  .responsive-table tr:nth-child(even) {
+  /* .responsive-table tr:nth-child(even) {
     background: #fafafa;
-  }
+  } */
 }
 .responsive-table th,
 .responsive-table td {
@@ -119,6 +119,7 @@ h6 {
   float: right;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 13px;
 }
 @media screen and (min-width: 1000px) {
   .responsive-table td:before {

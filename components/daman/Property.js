@@ -17,10 +17,10 @@ export default function Property(props) {
       }}
       {...flexProps}
     >
-      <Box as="dt" minWidth="180px">
+      <Box as="dt" flex="1" minWidth="180px">
         {label}
       </Box>
-      <Box as="dd" flex="1" fontWeight="semibold">
+      <Box as="dd" flex="1.5" fontWeight="semibold">
         {value}
       </Box>
     </Flex>

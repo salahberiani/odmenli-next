@@ -14,9 +14,9 @@ import React from 'react';
 
 export default function Example() {
   const [value, setValue] = React.useState({
-    ccpName: 'SALAH EDDIN BERIANI',
-    ccpKey: '80',
-    ccpNumber: '454512121',
+    ccpName: 'MERZOUGUI SADDAM',
+    ccpKey: '32',
+    ccpNumber: '0018134596',
   });
 
   return (
