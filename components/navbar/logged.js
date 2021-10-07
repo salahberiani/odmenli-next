@@ -10,22 +10,22 @@ export default function LoggedinMenu() {
   return (
     <>
       <Link prefetch={false} passHref href="/price">
-        <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
+        <Button color="black" fontSize={'sm'} fontWeight={400} variant={'link'}>
           أسعار التعامل
         </Button>
       </Link>
       <Link prefetch={false} passHref href="/howwework">
-        <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
+        <Button color="black" fontSize={'sm'} fontWeight={400} variant={'link'}>
           كيف نعمل
         </Button>
       </Link>
       <Link prefetch={false} passHref href="/dashboard">
-        <Button fontSize={'sm'} fontWeight={400} variant={'link'}>
+        <Button color="black" fontSize={'sm'} fontWeight={400} variant={'link'}>
           المنصة
         </Button>
       </Link>
       <Menu>
-        <MenuButton as={Button} variant={'link'} rightIcon={<ChevronDownIcon />}>
+        <MenuButton color="black" as={Button} variant={'link'} rightIcon={<ChevronDownIcon />}>
           الحساب
         </MenuButton>
         <MenuList>

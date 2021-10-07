@@ -2,6 +2,7 @@
 import { useTable } from 'react-table';
 import React, { useState, useEffect } from 'react';
 import { Table, Thead, Tbody, Tr, Th, Td, Badge, Box, Button, Flex } from '@chakra-ui/react';
+
 import { AddIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 // import Axios from 'util/Axios';
@@ -17,7 +18,7 @@ function DashTable({ columns, data }) {
 
   // Render the UI for your table
   return (
-    <Table shadow="lg" bg="white" {...getTableProps()}>
+    <Table fontSize="xl" className="responsive-table" bg="white" {...getTableProps()}>
       <Thead>
         {headerGroups.map((headerGroup, i) => (
           <Tr key={i} {...headerGroup.getHeaderGroupProps()}>
@@ -35,8 +36,9 @@ function DashTable({ columns, data }) {
           return (
             <Tr _hover={{ bg: 'green.50' }} key={i} {...row.getRowProps()}>
               {row.cells.map((cell, i) => {
+                console.log(cell);
                 return (
-                  <Td key={i} {...cell.getCellProps()}>
+                  <Td data-label={cell.column.Header} key={i} {...cell.getCellProps()}>
                     {cell.render('Cell')}
                   </Td>
                 );
@@ -148,9 +150,9 @@ function App() {
           </Button>
         </Link>
       </Flex>
-      <Box w="100%" overflowX={{ base: 'scroll', md: 'hidden' }} overflowY="hidden">
-        {daman && <DashTable columns={columns} data={daman} />}
-      </Box>
+      {/* <Box shadow="xl" w="100%" overflowX={{ base: 'scroll', md: 'hidden' }} overflowY="hidden"> */}
+      {daman && <DashTable columns={columns} data={daman} />}
+      {/* </Box> */}
     </Box>
   );
 }

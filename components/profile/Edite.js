@@ -28,6 +28,12 @@ export default function Adddaman({ profile, setEdit }) {
 
     try {
       const res = await Axios.post(`/profile/update`, data);
+      toast({
+        title: 'تم تعديل الحساب بنجاح',
+        status: 'success',
+        duration: 9000,
+        // isClosable: true,
+      });
       console.log(res);
       setEdit(false);
     } catch (error) {

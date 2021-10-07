@@ -26,7 +26,7 @@ export default function SplitScreen() {
               ضمان كل أنواع الصفقات المالية التي تحدث بين طرفين أو اكثر في الجزائر
             </Text>{' '}
           </Heading>
-          <Text fontSize={{ base: 'md', lg: 'xl' }} color={'gray.500'}>
+          <Text fontSize={{ base: 'md', lg: 'xl' }} color={'gray.600'} fontWeight="bold">
             نظرا <span className="underline">للاحتيالات</span> التجارية التي تحدث عبر مواقع الشبكة
             العنكبوتية بشكل متكرر وكبير وللقظاء عليها والحد منها قمنا بانشاء موقع اظمنلي الذي يظمن
             حدوث المبادلات التجارية دون الوقوع في فخ الاحتيال الالكتروني الذي يقوم به اشخاص بحسابات

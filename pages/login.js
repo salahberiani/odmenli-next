@@ -43,6 +43,12 @@ export default function SimpleCard() {
     e.preventDefault();
     try {
       const res = await axios.post(`${process.env.NEXT_PUBLIC_API}/user/login`, values);
+      toast({
+        title: 'مرحبا بك',
+        status: 'success',
+        duration: 9000,
+        // isClosable: true,
+      });
       login(res.data);
       setTimeout(() => {
         console.log('loggin out');
