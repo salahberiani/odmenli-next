@@ -30,7 +30,7 @@ export default function Index() {
       }
     };
     getProfile();
-  }, [_id, edit, Axios, setProfile]);
+  }, [_id, edit, setProfile]);
   console.log(profile);
   return (
     <Box
