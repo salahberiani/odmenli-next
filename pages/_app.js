@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-import { ChakraProvider, Box, Spinner, Flex } from '@chakra-ui/react';
+import { ChakraProvider, Box, Spinner, Flex, Heading } from '@chakra-ui/react';
 import { RtlProvider } from 'components/rtl-provider';
 import Navbar from 'components/navbar';
 import Footer from 'components/footer';
@@ -119,7 +119,7 @@ function MyApp({ Component, pageProps }) {
               },
             }}
           >
-            {authorized ? (
+            {/* {authorized ? (
               <>
                 <Navbar></Navbar>
                 <Box pt="100px" minH="100vh">
@@ -129,7 +129,10 @@ function MyApp({ Component, pageProps }) {
               </>
             ) : (
               <Loading></Loading>
-            )}
+            )} */}
+            <Flex justifyContent="center" alignItems="center">
+              <Heading>الموقع مازال تحت التطوير</Heading>
+            </Flex>
           </motion.div>
         </Box>
         {typeof window !== 'undefiend' && <FbChat></FbChat>}

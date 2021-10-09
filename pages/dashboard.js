@@ -8,7 +8,7 @@ export default function TableExample(props) {
   return (
     <Box px={{ base: '5%', md: '10%' }} pb="5%" mb="100px" maxW="100vw">
       <CcpInfo></CcpInfo>
-      {/* <Init></Init> */}
+
       <Table></Table>
     </Box>
   );
