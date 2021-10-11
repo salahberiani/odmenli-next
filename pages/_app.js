@@ -119,7 +119,7 @@ function MyApp({ Component, pageProps }) {
               },
             }}
           >
-            {/* {authorized ? (
+            {authorized ? (
               <>
                 <Navbar></Navbar>
                 <Box pt="100px" minH="100vh">
@@ -129,10 +129,10 @@ function MyApp({ Component, pageProps }) {
               </>
             ) : (
               <Loading></Loading>
-            )} */}
-            <Flex justifyContent="center" alignItems="center">
+            )}
+            {/* <Flex justifyContent="center" alignItems="center">
               <Heading>الموقع مازال تحت التطوير</Heading>
-            </Flex>
+            </Flex> */}
           </motion.div>
         </Box>
         {typeof window !== 'undefiend' && <FbChat></FbChat>}
